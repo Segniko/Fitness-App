@@ -1,0 +1,53 @@
+import { Button, Stack, Typography } from '@mui/material';
+import React from 'react';
+
+import BodyPartImage from '../assets/icons/body-part.png';
+import EquipmentImage from '../assets/icons/equipment.png';
+import TargetImage from '../assets/icons/target.png';
+
+const Detail = ({ exerciseDetail }) => {
+  const { bodyPart, gifUrl, name, target, equipment} = exerciseDetail;
+
+  const extraDetail = [
+    {
+      icon: BodyPartImage,
+      name: bodyPart,
+    },
+    {
+      icon: TargetImage,
+      name: target,
+    },
+    {
+      icon: EquipmentImage,
+      name: equipment,
+    },
+  ]
+
+  return (
+    <Stack gap="60px" sx={{flexDirection: { lg: 'row'}, p: '70px', alignItems: 'center'}}>
+      <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
+      <Stack sx={{ gap: { lg: '35px', xs: '20px'}}}>
+      <Typography variant="h3" fontSize="7">
+        {name}
+      </Typography>
+      <Typography variant="h6" fontSize="28px">
+          Exercise is essential for maintaining strength. {name} {` `}
+          is one of the best ways to target your  {target}. Engaging in this activity can enhance your mood and
+          boost your energy levels.
+      </Typography>
+      {extraDetail.map((item) => (
+          <Stack key={item.name} direction="row" gap="24px" alignItems="center">
+              <Button sx={{ background: '#FFF2DB', borderRadius: '50%', width: '100px', height: '100px'}}>
+                <img src={item.icon} alt={bodyPart} style={{width: '50px', height: '50px' }}/>
+                </Button>
+                <Typography textTransform="capitalize" variant="h5" >
+                  {item.name}
+                </Typography>
+            </Stack>
+      ))}
+      </Stack>
+    </Stack>
+  )
+}
+
+export default Detail
