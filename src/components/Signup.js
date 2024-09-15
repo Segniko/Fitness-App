@@ -11,44 +11,47 @@ const Signup = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-800">
-            <div className="p-6 bg-white rounded shadow-md w-full max-w-sm">
-                <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
+        <div className="auth-container">
+            <div className="auth-box">
+                <h1 className="auth-title">Sign Up</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label className="block mb-2" htmlFor="username">Username:</label>
+                    <div className="input-group">
+                        <label htmlFor="username">Username:</label>
                         <input
                             type="text"
                             id="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
-                            className="border p-2 w-full"
+                            className="auth-input"
+                            placeholder="Enter your username"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block mb-2" htmlFor="email">Email:</label>
+                    <div className="input-group">
+                        <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="border p-2 w-full"
+                            className="auth-input"
+                            placeholder="Enter your email"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block mb-2" htmlFor="password">Password:</label>
+                    <div className="input-group">
+                        <label htmlFor="password">Password:</label>
                         <input
                             type="password"
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="border p-2 w-full"
+                            className="auth-input"
+                            placeholder="Enter your password"
                         />
                     </div>
-                    <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">Sign Up</button>
+                    <button type="submit" className="auth-button">Sign Up</button>
                 </form>
             </div>
         </div>
