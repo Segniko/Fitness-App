@@ -417,103 +417,110 @@ body {
   transform: scale(1.05); /* Slight scale effect on hover */
 }
 
-/* General styles */
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #0099ff, #66ccff); /* Intense blue gradient background */
+  background: linear-gradient(to right, #0099ff, #66ccff); /* Blue gradient background */
   color: #333;
 }
 
-/* Settings Page Styles */
-.settings-container {
+/* Content Container Styles */
+.content-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: transparent; /* Keeps gradient background from body */
+  padding: 0;
+  background: transparent;
 }
 
-.settings-box {
-  padding: 2rem;
+.content {
+  width: 100%;
+  max-width: 800px; /* Limiting width for better design */
+  background-color: #ffffff; /* White background for the form */
   border-radius: 1rem; /* Rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  width: 100%;
-  max-width: 600px; /* Limiting width for better design */
-  background-color: #ffffff; /* White background for the form */
+  padding: 2rem; /* Inner padding */
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  margin: 0 auto;
 }
 
-.settings-box.dark-mode {
-  background-color: #2d2d2d; /* Dark background for dark mode */
-  color: #ffffff; /* Light text color for dark mode */
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top for scrolling */
+  min-height: 100vh;
+  padding: 0;
+  background: transparent;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.settings-box:hover {
+.settings-content {
+  width: 100%;
+  max-width: 800px; /* Limiting width for better design */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 2rem; /* Inner padding */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  margin: 0 auto;
+}
+
+.settings-content:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
 .settings-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
+  color: #333;
 }
 
 .settings-section {
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 1rem;
-}
-
-.settings-section:last-of-type {
-  border-bottom: none; /* Remove border for the last section */
+  margin-bottom: 2rem;
 }
 
 .settings-section h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #4f46e5; /* Accent color */
 }
 
-.settings-switch {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+.settings-input, .settings-select {
+  margin-bottom: 1.5rem;
 }
 
-.settings-switch label {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
+.settings-input label, .settings-select label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
-.settings-switch input {
-  margin-right: 1rem;
-}
-
-.settings-slider {
+.settings-input input, .settings-select select {
   width: 100%;
-  margin: 0 1rem;
+  padding: 0.75rem;
+  border: 2px solid #4f46e5; /* Blue border */
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
 }
 
-.settings-color-picker {
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  cursor: pointer;
+.settings-input input:focus, .settings-select select:focus {
+  border-color: #66ccff; /* Lighter blue on focus */
+  outline: none;
 }
 
 .settings-button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #0099ff; /* Button color matching the gradient */
+  padding: 1rem;
+  background-color: #4f46e5; /* Button color matching the theme */
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
@@ -521,4 +528,109 @@ body {
 .settings-button:hover {
   background-color: #66ccff; /* Lighter blue on hover */
   transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.settings-links a {
+  display: block;
+  color: #4f46e5;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.settings-links a:hover {
+  color: #66ccff;
+  text-decoration: underline;
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #4f46e5; /* Blue border */
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #66ccff; /* Lighter blue on focus */
+  outline: none;
+}
+
+.contact-form .submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4f46e5; /* Button color matching the theme */
+  border: none;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.contact-form .submit-button:hover {
+  background-color: #66ccff; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.faq-item, .terms-item, .privacy-item {
+  margin-bottom: 1.5rem;
+}
+
+/* App.css */
+
+/* Container for the workouts */
+.workout-container {
+  padding: 20px;
+  background-color: #e0f7fa; /* Light blue background */
+  min-height: 100vh; /* Ensure the container takes full height */
+}
+
+/* Title of the workouts section */
+.workout-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00796b; /* Darker shade of blue for the title */
+}
+
+/* Container for workout cards */
+.workout-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual workout card */
+.workout-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Container for pagination */
+.pagination-container {
+  margin-top: 20px;
 }
