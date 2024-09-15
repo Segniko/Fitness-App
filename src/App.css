@@ -272,7 +272,7 @@ button[type="submit"]:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Input and Textarea Styling with No Borders */
+/* Input and Textarea Styling with Complete Border Removal */
 input[type="text"],
 input[type="email"],
 input[type="file"],
@@ -284,8 +284,15 @@ textarea {
   border-radius: 6px;
   width: 100%;
   margin-top: 10px;
-  box-shadow: none; /* No shadow */
-  border: none; /* No borders */
+  border: none; /* Fully remove borders */
+  outline: none; /* Remove any browser-specific outline */
+  box-shadow: none; /* Remove shadow */
+}
+
+/* To ensure full border removal, disable focus outline */
+input:focus,
+textarea:focus {
+  outline: none; /* Remove default focus outline */
 }
 
 /* Save Button Styling */
