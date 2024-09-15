@@ -249,3 +249,78 @@ button[type="submit"]:hover {
   font-weight: bold;
   margin: 0;
 }
+
+/* Profile Container */
+.profile-container {
+  background: linear-gradient(to bottom, #111, #333); /* Same gradient as Nutrition Tracker */
+  padding: 40px;
+  color: white;
+}
+
+/* Profile Card */
+.profile-card {
+  background-color: #1a1a1a; /* Dark background for the card */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Input and Textarea Styling with No Borders */
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
+  background-color: #333; /* Dark background */
+  color: white; /* White text */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: none; /* No shadow */
+  border: none; /* No borders */
+}
+
+/* Save Button Styling */
+button {
+  background-color: #3182ce; /* Bright blue button */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(50, 150, 250, 0.5); /* Soft shadow */
+}
+
+button:hover {
+  background-color: #006bb3; /* Darker blue on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Profile Picture Styling */
+img {
+  object-fit: cover;
+  display: block;
+  border: none; /* No border around profile picture */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .profile-card {
+    padding: 20px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
