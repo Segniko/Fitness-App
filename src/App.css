@@ -416,3 +416,109 @@ body {
   background-color: #feb47b; /* Lighter color on hover */
   transform: scale(1.05); /* Slight scale effect on hover */
 }
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #0099ff, #66ccff); /* Intense blue gradient background */
+  color: #333;
+}
+
+/* Settings Page Styles */
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: transparent; /* Keeps gradient background from body */
+}
+
+.settings-box {
+  padding: 2rem;
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  width: 100%;
+  max-width: 600px; /* Limiting width for better design */
+  background-color: #ffffff; /* White background for the form */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.settings-box.dark-mode {
+  background-color: #2d2d2d; /* Dark background for dark mode */
+  color: #ffffff; /* Light text color for dark mode */
+}
+
+.settings-box:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.settings-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.settings-section {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.settings-section:last-of-type {
+  border-bottom: none; /* Remove border for the last section */
+}
+
+.settings-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.settings-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.settings-switch label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.settings-switch input {
+  margin-right: 1rem;
+}
+
+.settings-slider {
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.settings-color-picker {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.settings-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0099ff; /* Button color matching the gradient */
+  border: none;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.settings-button:hover {
+  background-color: #66ccff; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
