@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 
 const Settings = () => {
     const [notifications, setNotifications] = useState(true);
-    const [darkMode, setDarkMode] = useState(false);
     const [emailUpdates, setEmailUpdates] = useState(true);
-    const [privacyMode, setPrivacyMode] = useState(false);
-    const [volume, setVolume] = useState(50);
     const [themeColor, setThemeColor] = useState('#4f46e5'); // Default color
+    const [language, setLanguage] = useState('en');
+    const [email, setEmail] = useState('');
+    const [newPassword, setNewPassword] = useState('');
 
     const handleSave = () => {
         alert("Settings updated!");
     };
 
     return (
-        <div className={`settings-container ${darkMode ? 'dark-mode' : ''}`}>
-            <div className={`settings-box ${darkMode ? 'dark-mode' : ''}`}>
+        <div className="settings-container">
+            <div className="settings-content">
                 <h1 className="settings-title">Settings</h1>
 
                 {/* Preferences Section */}
@@ -40,58 +41,64 @@ const Settings = () => {
                             Receive Email Updates
                         </label>
                     </div>
-                    <div className="settings-switch">
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={darkMode}
-                                onChange={() => setDarkMode(!darkMode)}
-                            />
-                            Dark Mode
-                        </label>
-                    </div>
-                    <div className="settings-switch">
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={privacyMode}
-                                onChange={() => setPrivacyMode(!privacyMode)}
-                            />
-                            Privacy Mode
-                        </label>
-                    </div>
                 </div>
 
-                {/* Audio Section */}
+                {/* Account Management Section */}
                 <div className="settings-section">
-                    <h2>Audio Settings</h2>
-                    <div className="settings-slider-container">
-                        <label>
-                            Volume
-                            <input
-                                type="range"
-                                min="0"
-                                max="100"
-                                value={volume}
-                                onChange={(e) => setVolume(e.target.value)}
-                                className="settings-slider"
-                            />
-                        </label>
-                        <span>{volume}%</span>
-                    </div>
-                </div>
-
-                {/* Theme Color Section */}
-                <div className="settings-section">
-                    <h2>Theme Color</h2>
-                    <div className="settings-color-picker-container">
+                    <h2>Account Management</h2>
+                    <div className="settings-input">
+                        <label>Email</label>
                         <input
-                            type="color"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter new email"
+                        />
+                    </div>
+                    <div className="settings-input">
+                        <label>New Password</label>
+                        <input
+                            type="password"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                            placeholder="Enter new password"
+                        />
+                    </div>
+                </div>
+
+                {/* Language Preferences Section */}
+                <div className="settings-section">
+                    <h2>Language Preferences</h2>
+                    <div className="settings-select">
+                        <label>Language</label>
+                        <select
+                            value={language}
+                            onChange={(e) => setLanguage(e.target.value)}
+                        >
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            {/* Add more languages as needed */}
+                        </select>
+                    </div>
+                </div>
+
+                {/* Theme Customization Section */}
+                <div className="settings-section">
+                    <h2>Theme Customization</h2>
+                    <div className="settings-select">
+                        <label>Theme</label>
+                        <select
                             value={themeColor}
                             onChange={(e) => setThemeColor(e.target.value)}
-                            className="settings-color-picker"
-                        />
-                        <span className="settings-color-label">Select your theme color</span>
+                        >
+                            <option value="#4f46e5">Blue</option>
+                            <option value="#ef4444">Red</option>
+                            <option value="#10b981">Green</option>
+                            <option value="#f59e0b">Orange</option>
+                            {/* Add more colors as needed */}
+                        </select>
                     </div>
                 </div>
 
@@ -99,6 +106,15 @@ const Settings = () => {
                 <button onClick={handleSave} className="settings-button">
                     Save Settings
                 </button>
+
+                {/* Help and Support Links */}
+                <div className="settings-links">
+                    <h2 className="settings-links-title">Help and Support</h2>
+                    <Link to="/faq">FAQ</Link>
+                    <Link to="/contact">Contact Support</Link>
+                    <Link to="/terms">Terms of Service</Link>
+                    <Link to="/privacy">Privacy Policy</Link>
+                </div>
             </div>
         </div>
     );
