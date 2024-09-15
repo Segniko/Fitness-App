@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFire, FaDrumstickBite, FaBreadSlice, FaPizzaSlice } from 'react-icons/fa';
 
 const Nutrition = () => {
     const [nutrition, setNutrition] = useState({ calories: "", protein: "", carbs: "", fats: "" });
@@ -15,75 +16,112 @@ const Nutrition = () => {
         setNutrition({ calories: "", protein: "", carbs: "", fats: "" });
     };
 
+    // Calculate total stats dynamically
+    const totalCalories = progress.reduce((acc, curr) => acc + parseInt(curr.calories), 0);
+    const totalProtein = progress.reduce((acc, curr) => acc + parseInt(curr.protein), 0);
+    const totalCarbs = progress.reduce((acc, curr) => acc + parseInt(curr.carbs), 0);
+    const totalFats = progress.reduce((acc, curr) => acc + parseInt(curr.fats), 0);
+
     return (
-        <div className="nutrition-container flex flex-col items-center justify-center h-screen bg-gray-200 p-6">
-            <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">Nutrition Tracker</h2>
-            <form onSubmit={handleSubmit} className="nutrition-form bg-white p-6 rounded shadow-lg w-full max-w-md">
+        <div className="nutrition-container">
+            <h2 className="text-4xl font-bold mb-6 text-center">Nutrition Tracker</h2>
+
+            {/* Dashboard Stats */}
+            <div className="dashboard-stats">
+                <div className="stat-card">
+                    <div className="icon"><FaFire /></div>
+                    <h3>Total Calories</h3>
+                    <p>{totalCalories} kcal</p>
+                </div>
+                <div className="stat-card">
+                    <div className="icon"><FaDrumstickBite /></div>
+                    <h3>Total Protein</h3>
+                    <p>{totalProtein} g</p>
+                </div>
+                <div className="stat-card">
+                    <div className="icon"><FaBreadSlice /></div>
+                    <h3>Total Carbs</h3>
+                    <p>{totalCarbs} g</p>
+                </div>
+                <div className="stat-card">
+                    <div className="icon"><FaPizzaSlice /></div>
+                    <h3>Total Fats</h3>
+                    <p>{totalFats} g</p>
+                </div>
+            </div>
+
+            <form onSubmit={handleSubmit} className="nutrition-form">
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="calories">Calories</label>
                     <input
                         type="number"
                         name="calories"
                         value={nutrition.calories}
                         onChange={handleNutritionChange}
-                        placeholder="Enter Calories"
-                        className="border border-gray-300 rounded p-2 w-full"
+                        placeholder="Calories"
+                        className="border p-2 rounded w-full"
                         required
                     />
                 </div>
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="protein">Protein (g)</label>
                     <input
                         type="number"
                         name="protein"
                         value={nutrition.protein}
                         onChange={handleNutritionChange}
-                        placeholder="Enter Protein"
-                        className="border border-gray-300 rounded p-2 w-full"
+                        placeholder="Protein (g)"
+                        className="border p-2 rounded w-full"
                         required
                     />
                 </div>
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="carbs">Carbs (g)</label>
                     <input
                         type="number"
                         name="carbs"
                         value={nutrition.carbs}
                         onChange={handleNutritionChange}
-                        placeholder="Enter Carbs"
-                        className="border border-gray-300 rounded p-2 w-full"
+                        placeholder="Carbs (g)"
+                        className="border p-2 rounded w-full"
                         required
                     />
                 </div>
                 <div className="form-group mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fats">Fats (g)</label>
                     <input
                         type="number"
                         name="fats"
                         value={nutrition.fats}
                         onChange={handleNutritionChange}
-                        placeholder="Enter Fats"
-                        className="border border-gray-300 rounded p-2 w-full"
+                        placeholder="Fats (g)"
+                        className="border p-2 rounded w-full"
                         required
                     />
                 </div>
-                <button type="submit" className="bg-blue-500 text-white p-3 rounded w-full font-bold hover:bg-blue-600 transition">
-                    Add Nutrition
-                </button>
+                <button type="submit" className="bg-blue-500 text-white p-3 rounded w-full font-bold">Add Nutrition</button>
             </form>
 
-            <div className="progress-section w-full max-w-2xl mt-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Progress</h3>
+            <div className="progress-section">
+                <h3 className="text-2xl font-semibold mb-4">Progress</h3>
                 {progress.length === 0 ? (
-                    <p className="text-gray-500">No nutrition data yet.</p>
+                    <p>No nutrition data yet.</p>
                 ) : (
-                    <ul className="bg-white rounded-lg shadow-lg p-6">
+                    <ul>
                         {progress.map((entry, index) => (
-                            <li key={index} className="mb-2 p-4 bg-gray-100 rounded">
-                                <span className="font-bold text-gray-700">Calories:</span> {entry.calories},
-                                <span className="font-bold text-gray-700"> Protein:</span> {entry.protein}g,
-                                <span className="font-bold text-gray-700"> Carbs:</span> {entry.carbs}g,
-                                <span className="font-bold text-gray-700"> Fats:</span> {entry.fats}g
+                            <li key={index} className="mb-4">
+                                <span>Calories: {entry.calories}</span>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${(entry.calories / 2500) * 100}%` }}></div>
+                                </div>
+                                <span>Protein: {entry.protein}g</span>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${(entry.protein / 150) * 100}%` }}></div>
+                                </div>
+                                <span>Carbs: {entry.carbs}g</span>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${(entry.carbs / 300) * 100}%` }}></div>
+                                </div>
+                                <span>Fats: {entry.fats}g</span>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${(entry.fats / 70) * 100}%` }}></div>
+                                </div>
                             </li>
                         ))}
                     </ul>

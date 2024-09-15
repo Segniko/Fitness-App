@@ -182,3 +182,70 @@ button[type="submit"]:hover {
   margin-bottom: 5px;
   color: #FF6B6B; /* Bright color for key labels */
 }
+
+/* Animation for progress items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+.progress-section li {
+  animation: fadeIn 0.5s ease-in-out; /* Fade in on new entry */
+}
+
+/* Gradient Progress Bars */
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4caf50, #f9a825); /* Gradient for progress */
+  transition: width 0.4s ease-in-out;
+}
+
+/* Dashboard Stats Cards */
+.dashboard-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background-color: #1a1a1a; /* Dark background for cards */
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon inside the card */
+.stat-card .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #FF6B6B;
+}
+
+/* Text inside the card */
+.stat-card h3 {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.stat-card p {
+  font-size: 28px;
+  color: #FF6B6B;
+  font-weight: bold;
+  margin: 0;
+}
