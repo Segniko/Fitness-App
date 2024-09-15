@@ -88,87 +88,97 @@ body {
 
 /* Nutrition Form and Progress Styling */
 .nutrition-container {
-  background-color: black; /* Set the entire background of the Nutrition Tracker to black */
+  background: linear-gradient(to bottom, #111, #333); /* Subtle gradient */
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
+  border-radius: 12px;
+  max-width: 900px;
   margin: 100px auto; /* Centering the nutrition section */
   color: white; /* Ensure text color is white for readability */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for the floating effect */
+  position: relative;
 }
 
-.nutrition-form {
-  width: 100%;
-  background-color: #1a1a1a; /* Dark gray form background to match black */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+/* Remove the border and make it a floating card with shadow */
+.nutrition-form, .progress-section {
+  background-color: #222; /* Dark, sleek background */
   padding: 20px;
-  border-radius: 8px;
-  border: 2px solid white; /* White border for contrast */
-  margin-bottom: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Soft shadow for floating card effect */
+  transition: transform 0.3s ease;
 }
 
-.form-group label {
-  font-weight: 600;
-  color: white; /* White text for labels */
+/* Hover effect for the form and progress */
+.nutrition-form:hover, .progress-section:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
 }
 
 .form-group input {
-  border: 1px solid white; /* White border for inputs */
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 16px;
   background-color: #333; /* Dark input background */
-  color: white; /* White text in inputs */
+  color: white; /* White text */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6); /* Soft shadow inside the input */
 }
 
 button[type="submit"] {
-  background-color: #3182ce; /* Blue submit button */
-  color: white;
+  background-color: #FF6B6B; /* Bright color for contrast */
   padding: 12px;
   font-size: 18px;
   font-weight: bold;
-  border: 2px solid white; /* White border for button */
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 107, 107, 0.6); /* Soft shadow */
 }
 
 button[type="submit"]:hover {
-  background-color: #2b6cb0;
+  background-color: #ff4c4c;
+  transform: translateY(-3px); /* Slight lift on hover */
 }
 
 .progress-section {
   margin-top: 30px;
-  background-color: #1a1a1a; /* Dark background for progress section */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  color: white; /* Ensure text color is white */
 }
 
-.progress-section h3 {
-  font-size: 24px;
+/* Progress Bars for Nutrition Data */
+.progress-bar {
+  height: 20px;
+  border-radius: 12px;
+  background-color: #333; /* Background of the progress bar */
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4caf50; /* Green progress fill */
+  transition: width 0.4s ease-in-out;
+}
+
+.progress-bar-label {
+  margin-bottom: 8px;
   font-weight: bold;
-  color: white; /* White text for section heading */
+  color: white;
 }
 
-.progress-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
+/* Progress list styling */
 .progress-section li {
-  padding: 10px;
-  background-color: #333; /* Dark background for progress items */
+  padding: 15px;
+  background-color: #333; /* Floating card for each item */
   border-radius: 8px;
   margin-bottom: 10px;
   font-size: 16px;
-  color: white; /* White text */
+  color: white;
   display: flex;
-  justify-content: space-between;
-  border: 1px solid white; /* White border for progress items */
+  flex-direction: column;
 }
 
 .progress-section li span {
   font-weight: bold;
-  color: #c0c0c0; /* Lighter text color for labels */
+  margin-bottom: 5px;
+  color: #FF6B6B; /* Bright color for key labels */
 }
