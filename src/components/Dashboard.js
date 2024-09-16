@@ -15,7 +15,7 @@ const Dashboard = ({ isOpen, toggleDashboard }) => {
                 <br/>
                 <li><Link to="/Profile" className="dashboard-link">Your Profile</Link></li>
                 <br/>
-                <li><Link to="/Exercises" className="dashboard-link">Workouts</Link></li>
+                <li><Link to="/Workouts" className="dashboard-link">Workouts</Link></li>
                 <br/>
                 <li><Link to="/Nutrition" className="dashboard-link">Nutrition</Link></li>
                 <br/>

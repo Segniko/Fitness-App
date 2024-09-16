@@ -16,10 +16,10 @@ const Navbar = ({ toggleDashboard }) => {
                 top: 0,
                 left: 0,
                 right: 0,
-                zIndex: 1000, // Corrected 'Index' to 'zIndex'
+                zIndex: 1000,
                 padding: '0 20px',
                 height: '70px',
-                backgroundColor: '#2196F3' // Background color for the Navbar
+                backgroundColor: '#1E88E5' // Slightly lighter blue to fit with the background
             }}
         >
             <Link onClick={toggleDashboard} style={{ display: 'flex', alignItems: 'center' }}>
@@ -34,14 +34,14 @@ const Navbar = ({ toggleDashboard }) => {
                     <Button
                         variant="outlined"
                         sx={{
-                            borderColor: '#FFFFFF',
-                            color: '#FFFFFF',
+                            borderColor: '#FFEB3B', // Yellow border color for Login button
+                            color: '#FFEB3B', // Yellow text color for Login button
                             fontSize: '16px',
                             fontWeight: 'bold',
                             borderRadius: '20px',
                             '&:hover': {
-                                backgroundColor: '#FFFFFF',
-                                color: '#2196F3'
+                                backgroundColor: '#FFEB3B', // Yellow background on hover
+                                color: '#1E88E5' // Blue text color on hover
                             }
                         }}
                     >
@@ -52,13 +52,13 @@ const Navbar = ({ toggleDashboard }) => {
                     <Button
                         variant="contained"
                         sx={{
-                            backgroundColor: '#FF5722',
-                            color: '#FFFFFF',
+                            backgroundColor: '#FFEB3B', // Yellow background color for Sign Up button
+                            color: '#1E88E5', // Blue text color for Sign Up button
                             fontSize: '16px',
                             fontWeight: 'bold',
                             borderRadius: '20px',
                             '&:hover': {
-                                backgroundColor: '#E64A19'
+                                backgroundColor: '#FBC02D' // Slightly darker yellow on hover
                             }
                         }}
                     >

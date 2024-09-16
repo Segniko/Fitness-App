@@ -4,10 +4,15 @@ const Signup = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Signing up with:', { username, email, password });
+        if (password === confirmPassword) {
+            console.log('Signing up with:', { username, email, password });
+        } else {
+            alert('Passwords do not match!');
+        }
     };
 
     return (
@@ -51,8 +56,23 @@ const Signup = () => {
                             placeholder="Enter your password"
                         />
                     </div>
+                    <div className="input-group">
+                        <label htmlFor="confirmPassword">Confirm Password:</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                            className="auth-input"
+                            placeholder="Confirm your password"
+                        />
+                    </div>
                     <button type="submit" className="auth-button">Sign Up</button>
                 </form>
+                <p className="auth-link">
+                    Already have an account? <a href="/login">Login</a>
+                </p>
             </div>
         </div>
     );

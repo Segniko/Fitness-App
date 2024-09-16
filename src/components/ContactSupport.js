@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css'; // Import the updated CSS
 
 const ContactSupport = () => {
     const [name, setName] = useState('');

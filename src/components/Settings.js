@@ -110,10 +110,10 @@ const Settings = () => {
                 {/* Help and Support Links */}
                 <div className="settings-links">
                     <h2 className="settings-links-title">Help and Support</h2>
-                    <Link to="/faq">FAQ</Link>
-                    <Link to="/contact">Contact Support</Link>
-                    <Link to="/terms">Terms of Service</Link>
-                    <Link to="/privacy">Privacy Policy</Link>
+                    <Link to="/FAQ">FAQ</Link>
+                    <Link to="/Contact">Contact Support</Link>
+                    <Link to="/TermsOfService">Terms of Service</Link>
+                    <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 </div>
             </div>
         </div>

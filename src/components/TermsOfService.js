@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css'; // Import the updated CSS
 
 const TermsOfService = () => {
     return (

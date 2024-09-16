@@ -14,13 +14,21 @@ const Workouts = () => {
 
     const [feedbacks] = useState([
         { id: 1, workout: 'Push-Up Challenge', feedback: 'Great challenge! Really pushed my limits.' },
-        { id: 2, workout: '5K Run Challenge', feedback: 'I loved the motivation and tracking.' }
+        { id: 2, workout: '5K Run Challenge', feedback: 'I loved the motivation and tracking.' },
+        { id: 3, workout: '30-Day Push-Up Challenge', feedback: 'The daily progress updates were very motivating!' },
+        { id: 4, workout: '5K Run Challenge', feedback: 'Fantastic experience! The running tips were helpful.' }
     ]);
 
     const [restTips] = useState([
         'Get at least 7-8 hours of sleep per night.',
         'Incorporate rest days into your workout routine.',
-        'Stay hydrated and eat balanced meals.'
+        'Stay hydrated and eat balanced meals.',
+        'Try stretching exercises to improve flexibility.',
+        'Consider yoga or meditation for relaxation.',
+        'Use foam rollers to ease muscle tension.',
+        'Maintain a balanced diet with adequate proteins and carbs.',
+        'Avoid overtraining by listening to your body’s signals.',
+        'Ensure proper warm-up and cool-down during workouts.'
     ]);
 
     return (
