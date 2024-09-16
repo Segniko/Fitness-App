@@ -1,14 +1,3 @@
-body {
-  background-image: url('../src/assets/images/banner.png'); /* Background image */
-  background-size: cover; /* Cover full screen */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* No repeat */
-  background-attachment: fixed;
-  margin: 0;
-  height: 50vh;
-  color: white;
-}
-
 /* General Reset */
 * {
   padding: 0;
@@ -16,12 +5,21 @@ body {
   box-sizing: border-box;
 }
 
+/* Body Styling */
+body {
+  background-color: #2196F3; /* Blue background for the entire web page */
+  color: white;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
 /* Hide Scrollbar */
 ::-webkit-scrollbar {
   width: 0px;
 }
 
-/* Dashboard Styling */
+/* Sidebar Styling */
 .sidebar {
   width: 350px;
   background: rgba(0, 0, 0, 0.7);
@@ -88,74 +86,71 @@ body {
 
 /* Nutrition Form and Progress Styling */
 .nutrition-container {
-  background: linear-gradient(to bottom, #111, #333); /* Subtle gradient */
+  background: linear-gradient(to bottom, #111, #333);
   padding: 40px;
   border-radius: 12px;
   max-width: 900px;
-  margin: 100px auto; /* Centering the nutrition section */
-  color: white; /* Ensure text color is white for readability */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for the floating effect */
+  margin: 100px auto;
+  color: white;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
   position: relative;
 }
 
-/* Remove the border and make it a floating card with shadow */
 .nutrition-form, .progress-section {
-  background-color: #222; /* Dark, sleek background */
+  background-color: #222;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Soft shadow for floating card effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 
-/* Hover effect for the form and progress */
 .nutrition-form:hover, .progress-section:hover {
-  transform: translateY(-10px); /* Slight lift on hover */
+  transform: translateY(-10px);
 }
 
 .form-group input {
-  background-color: #333; /* Dark input background */
-  color: white; /* White text */
+  background-color: #333;
+  color: white;
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   border: none;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6); /* Soft shadow inside the input */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 button[type="submit"] {
-  background-color: #FF6B6B; /* Bright color for contrast */
+  background-color: #FF6B6B;
   padding: 12px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 10px rgba(255, 107, 107, 0.6); /* Soft shadow */
+  box-shadow: 0 5px 10px rgba(255, 107, 107, 0.6);
 }
 
 button[type="submit"]:hover {
   background-color: #ff4c4c;
-  transform: translateY(-3px); /* Slight lift on hover */
+  transform: translateY(-3px);
 }
 
 .progress-section {
   margin-top: 30px;
-  color: white; /* Ensure text color is white */
+  color: white;
 }
 
-/* Progress Bars for Nutrition Data */
 .progress-bar {
   height: 20px;
   border-radius: 12px;
-  background-color: #333; /* Background of the progress bar */
+  background-color: #333;
   margin-bottom: 15px;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background-color: #4caf50; /* Green progress fill */
+  background: linear-gradient(to right, #4caf50, #f9a825);
   transition: width 0.4s ease-in-out;
 }
 
@@ -165,10 +160,9 @@ button[type="submit"]:hover {
   color: white;
 }
 
-/* Progress list styling */
 .progress-section li {
   padding: 15px;
-  background-color: #333; /* Floating card for each item */
+  background-color: #333;
   border-radius: 8px;
   margin-bottom: 10px;
   font-size: 16px;
@@ -180,10 +174,9 @@ button[type="submit"]:hover {
 .progress-section li span {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #FF6B6B; /* Bright color for key labels */
+  color: #FF6B6B;
 }
 
-/* Animation for progress items */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -195,16 +188,8 @@ button[type="submit"]:hover {
   }
 }
 
-/* Apply the animation */
 .progress-section li {
-  animation: fadeIn 0.5s ease-in-out; /* Fade in on new entry */
-}
-
-/* Gradient Progress Bars */
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(to right, #4caf50, #f9a825); /* Gradient for progress */
-  transition: width 0.4s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Dashboard Stats Cards */
@@ -215,7 +200,7 @@ button[type="submit"]:hover {
 }
 
 .stat-card {
-  background-color: #1a1a1a; /* Dark background for cards */
+  background-color: #1a1a1a;
   padding: 20px;
   border-radius: 12px;
   width: 200px;
@@ -229,14 +214,12 @@ button[type="submit"]:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Icon inside the card */
 .stat-card .icon {
   font-size: 40px;
   margin-bottom: 10px;
   color: #FF6B6B;
 }
 
-/* Text inside the card */
 .stat-card h3 {
   font-size: 18px;
   color: #ffffff;
@@ -252,52 +235,48 @@ button[type="submit"]:hover {
 
 /* Profile Container */
 .profile-container {
-  background: linear-gradient(to bottom, #111, #333); /* Same gradient as Nutrition Tracker */
+  background: linear-gradient(to bottom, #111, #333);
   padding: 40px;
   color: white;
 }
 
 /* Profile Card */
 .profile-card {
-  background-color: #1a1a1a; /* Dark background for the card */
+  background-color: #1a1a1a;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Card Hover Effect */
 .profile-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Input and Textarea Styling with Complete Border Removal */
 input[type="text"],
 input[type="email"],
 input[type="file"],
 textarea {
-  background-color: #333; /* Dark background */
-  color: white; /* White text */
+  background-color: #333;
+  color: white;
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   width: 100%;
   margin-top: 10px;
-  border: none; /* Fully remove borders */
-  outline: none; /* Remove any browser-specific outline */
-  box-shadow: none; /* Remove shadow */
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
-/* To ensure full border removal, disable focus outline */
 input:focus,
 textarea:focus {
-  outline: none; /* Remove default focus outline */
+  outline: none;
 }
 
-/* Save Button Styling */
 button {
-  background-color: #3182ce; /* Bright blue button */
+  background-color: #3182ce;
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -305,19 +284,18 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 10px rgba(50, 150, 250, 0.5); /* Soft shadow */
+  box-shadow: 0 5px 10px rgba(50, 150, 250, 0.5);
 }
 
 button:hover {
-  background-color: #006bb3; /* Darker blue on hover */
-  transform: translateY(-3px); /* Slight lift on hover */
+  background-color: #006bb3;
+  transform: translateY(-3px);
 }
 
-/* Profile Picture Styling */
 img {
   object-fit: cover;
   display: block;
-  border: none; /* No border around profile picture */
+  border: none;
 }
 
 /* Responsive Styling */
@@ -326,180 +304,89 @@ img {
     padding: 20px;
   }
 
-  button {
-    font-size: 16px;
-    padding: 10px;
+  .progress-bar {
+    height: 12px;
+  }
+
+  .stat-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .dashboard-stats {
+    flex-direction: column;
   }
 }
 
-
-/*Login and Signup pages*/
-/* General styles */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Warm gradient background */
-  color: #333;
-}
-
-.auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: transparent; /* Transparent background to keep gradient */
-}
-
-.auth-box {
-  background-color: #ffffff; /* White background for the form */
-  border: 2px solid #ff7e5f; /* Border color matching gradient */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  padding: 30px;
-  width: 100%;
-  max-width: 400px; /* Limiting width for better design */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.auth-box:hover {
-  transform: scale(1.02); /* Slight scale effect on hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.auth-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #ff7e5f; /* Color matching the border */
-  text-align: center;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #555555;
-}
-
-.auth-input {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px; /* Rounded input fields */
-  box-sizing: border-box;
-  font-size: 16px;
-  transition: border-color 0.3s ease; /* Smooth border color transition */
-}
-
-.auth-input:focus {
-  border-color: #ff7e5f; /* Highlight border color on focus */
-  outline: none; /* Remove default focus outline */
-}
-
-.auth-button {
-  width: 100%;
-  padding: 14px;
-  background-color: #ff7e5f; /* Button color matching the gradient */
-  border: none;
-  border-radius: 8px;
-  color: #ffffff;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-}
-
-.auth-button:hover {
-  background-color: #feb47b; /* Lighter color on hover */
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
-
-/* General Styles */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #0099ff, #66ccff); /* Blue gradient background */
-  color: #333;
-}
-
-/* Content Container Styles */
-.content-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0;
-  background: transparent;
-}
-
-.content {
-  width: 100%;
-  max-width: 800px; /* Limiting width for better design */
-  background-color: #ffffff; /* White background for the form */
-  border-radius: 1rem; /* Rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  padding: 2rem; /* Inner padding */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+/* Home Page Styling */
+.home-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
+/* Settings Container Styles */
 .settings-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items at the top for scrolling */
+  align-items: flex-start; /* Align items to the top */
   min-height: 100vh;
   padding: 0;
-  background: transparent;
-  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #e0f2f1; /* Light background for contrast */
 }
 
+/* Settings Content Styling */
 .settings-content {
-  width: 100%;
-  max-width: 800px; /* Limiting width for better design */
-  background-color: #ffffff; /* White background for the form */
+  width: 80%; /* Increased width for better layout */
+  max-width: 1200px; /* Max-width for larger screens */
+  background-color: #ffffff; /* White background for content */
   border-radius: 1rem; /* Rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   padding: 2rem; /* Inner padding */
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  margin: 0 auto;
+  margin: 1rem auto; /* Center the content with margin */
+  display: flex;
+  flex-direction: column; /* Arrange child elements vertically */
 }
 
-.settings-content:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
+/* Settings Title */
 .settings-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: #333;
 }
 
+/* Section Styling */
 .settings-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Section Header */
 .settings-section h2 {
   font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #4f46e5; /* Accent color */
+  border-bottom: 2px solid #4f46e5; /* Underline effect */
+  padding-bottom: 0.5rem;
 }
 
+/* Input and Select Styles */
 .settings-input, .settings-select {
   margin-bottom: 1.5rem;
 }
 
+/* Input and Select Labels */
 .settings-input label, .settings-select label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
+  color: #555; /* Slightly darker text color */
 }
 
+/* Input and Select Fields */
 .settings-input input, .settings-select select {
   width: 100%;
   padding: 0.75rem;
@@ -508,11 +395,13 @@ body {
   transition: border-color 0.3s ease;
 }
 
+/* Focus States */
 .settings-input input:focus, .settings-select select:focus {
   border-color: #66ccff; /* Lighter blue on focus */
   outline: none;
 }
 
+/* Save Button Styling */
 .settings-button {
   width: 100%;
   padding: 1rem;
@@ -523,13 +412,16 @@ body {
   font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for button */
 }
 
+/* Button Hover Effect */
 .settings-button:hover {
   background-color: #66ccff; /* Lighter blue on hover */
   transform: scale(1.05); /* Slight scale effect on hover */
 }
 
+/* Links Styling */
 .settings-links a {
   display: block;
   color: #4f46e5;
@@ -539,98 +431,8 @@ body {
   transition: color 0.3s ease;
 }
 
+/* Link Hover Effect */
 .settings-links a:hover {
   color: #66ccff;
   text-decoration: underline;
-}
-
-/* Form Styles */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #4f46e5; /* Blue border */
-  border-radius: 0.5rem;
-  transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-  border-color: #66ccff; /* Lighter blue on focus */
-  outline: none;
-}
-
-.contact-form .submit-button {
-  width: 100%;
-  padding: 1rem;
-  background-color: #4f46e5; /* Button color matching the theme */
-  border: none;
-  border-radius: 0.75rem;
-  color: #ffffff;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-}
-
-.contact-form .submit-button:hover {
-  background-color: #66ccff; /* Lighter blue on hover */
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
-
-.faq-item, .terms-item, .privacy-item {
-  margin-bottom: 1.5rem;
-}
-
-/* App.css */
-
-/* Container for the workouts */
-.workout-container {
-  padding: 20px;
-  background-color: #e0f7fa; /* Light blue background */
-  min-height: 100vh; /* Ensure the container takes full height */
-}
-
-/* Title of the workouts section */
-.workout-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #00796b; /* Darker shade of blue for the title */
-}
-
-/* Container for workout cards */
-.workout-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Individual workout card */
-.workout-card {
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 300px;
-}
-
-/* Container for pagination */
-.pagination-container {
-  margin-top: 20px;
 }
