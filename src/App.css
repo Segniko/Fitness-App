@@ -7,8 +7,8 @@
 
 /* Body Styling */
 body {
-  background-color: #2196F3; /* Blue background for the entire web page */
-  color: white;
+  background-color: #E3F2FD; /* Light blue background for the entire web page */
+  color: #0D47A1; /* Dark blue text color for better readability */
   margin: 0;
   height: 100vh;
   font-family: Arial, sans-serif;
@@ -22,8 +22,8 @@ body {
 /* Sidebar Styling */
 .sidebar {
   width: 350px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+  background: rgba(0, 0, 0, 0.1); /* Very light blue background for sidebar */
+  color: #0D47A1; /* Dark blue text color */
   position: fixed;
   left: 0;
   top: 0;
@@ -42,7 +42,7 @@ body {
 .toggle-btn {
   background: none;
   border: none;
-  color: white;
+  color: #0D47A1; /* Dark blue text color */
   cursor: pointer;
   font-size: 30px;
   margin-bottom: 20px;
@@ -53,6 +53,7 @@ body {
   margin-bottom: 10px;
   font-family: 'Arial', sans-serif;
   position: relative;
+  color: #0D47A1; /* Dark blue title color */
 }
 
 .dashboard-title::after {
@@ -60,7 +61,7 @@ body {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #FF2625;
+  background-color: #FFEB3B; /* Yellow accent color */
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -73,7 +74,7 @@ body {
 
 .dashboard-link {
   text-decoration: none;
-  color: #FFF;
+  color: #0D47A1; /* Dark blue text color */
   font-size: 34px;
   transition: color 0.3s;
   display: block;
@@ -81,27 +82,27 @@ body {
 }
 
 .dashboard-link:hover {
-  color: #FF2625;
+  color: #FFEB3B; /* Yellow accent color */
 }
 
 /* Nutrition Form and Progress Styling */
 .nutrition-container {
-  background: linear-gradient(to bottom, #111, #333);
+  background: linear-gradient(to bottom, #E3F2FD, #BBDEFB); /* Light blue gradient background */
   padding: 40px;
   border-radius: 12px;
   max-width: 900px;
   margin: 100px auto;
-  color: white;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+  color: #0D47A1; /* Dark blue text color */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
 .nutrition-form, .progress-section {
-  background-color: #222;
+  background-color: #BBDEFB; /* Light blue for form and progress section */
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -110,63 +111,61 @@ body {
 }
 
 .form-group input {
-  background-color: #333;
-  color: white;
+  background-color: #E3F2FD; /* Very light blue for input fields */
+  color: #0D47A1; /* Dark blue text color */
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
-  border: none;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+  border: 1px solid #BBDEFB; /* Light blue border */
 }
 
 button[type="submit"] {
-  background-color: #FF6B6B;
+  background-color: #0D47A1; /* Dark blue button color */
   padding: 12px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 10px rgba(255, 107, 107, 0.6);
+  box-shadow: 0 5px 10px rgba(13, 71, 161, 0.3);
 }
 
 button[type="submit"]:hover {
-  background-color: #ff4c4c;
+  background-color: #0D47A1; /* Darker blue on hover */
   transform: translateY(-3px);
 }
 
 .progress-section {
   margin-top: 30px;
-  color: white;
 }
 
 .progress-bar {
   height: 20px;
   border-radius: 12px;
-  background-color: #333;
+  background-color: #BBDEFB; /* Light blue for progress bar background */
   margin-bottom: 15px;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(to right, #4caf50, #f9a825);
+  background: linear-gradient(to right, #0D47A1, #1976D2); /* Blue gradient */
   transition: width 0.4s ease-in-out;
 }
 
 .progress-bar-label {
   margin-bottom: 8px;
   font-weight: bold;
-  color: white;
+  color: #0D47A1; /* Dark blue label color */
 }
 
 .progress-section li {
   padding: 15px;
-  background-color: #333;
+  background-color: #E3F2FD; /* Very light blue for list items */
   border-radius: 8px;
   margin-bottom: 10px;
   font-size: 16px;
-  color: white;
+  color: #0D47A1; /* Dark blue text color */
   display: flex;
   flex-direction: column;
 }
@@ -174,7 +173,7 @@ button[type="submit"]:hover {
 .progress-section li span {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #FF6B6B;
+  color: #0D47A1; /* Dark blue text color */
 }
 
 @keyframes fadeIn {
@@ -200,72 +199,126 @@ button[type="submit"]:hover {
 }
 
 .stat-card {
-  background-color: #1a1a1a;
+  background-color: #BBDEFB; /* Light blue for cards */
   padding: 20px;
   border-radius: 12px;
   width: 200px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .stat-card .icon {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #FF6B6B;
+  color: #0D47A1; /* Dark blue icon color */
 }
 
 .stat-card h3 {
   font-size: 18px;
-  color: #ffffff;
+  color: #0D47A1; /* Dark blue text color */
   font-weight: bold;
 }
 
 .stat-card p {
   font-size: 28px;
-  color: #FF6B6B;
+  color: #0D47A1; /* Dark blue text color */
   font-weight: bold;
   margin: 0;
 }
 
-/* Profile Container */
+/* Profile Page */
 .profile-container {
-  background: linear-gradient(to bottom, #111, #333);
-  padding: 40px;
-  color: white;
+  padding-top: 80px; /* Adjust padding to avoid overlap with Navbar */
+  background-color: #F5F5F5; /* Light background color */
+  min-height: 100vh; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Profile Card */
 .profile-card {
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%; /* Increase width of the card */
+  max-width: 800px; /* Increase maximum width */
+  background-color: #FFFFFF; /* White background for the card */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  padding: 2.5rem; /* Increase padding inside the card */
+  margin: 0 auto; /* Center the card */
 }
 
-.profile-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+.profile-card h2 {
+  font-size: 2.5rem; /* Increase font size */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333333;
+}
+
+.profile-card label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #555555;
+}
+
+.profile-card input[type="text"],
+.profile-card input[type="email"],
+.profile-card textarea,
+.profile-card input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #4f46e5;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+.profile-card textarea {
+  resize: vertical; /* Allows vertical resizing only */
+  height: 200px; /* Increase default height for textarea */
+}
+
+.profile-card button {
+  width: 100%;
+  padding: 1.25rem; /* Increase padding */
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card button:hover {
+  background-color: #66ccff;
+  transform: scale(1.05);
+}
+
+.profile-picture-preview {
+  margin-top: 1rem;
+  text-align: center;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="file"],
 textarea {
-  background-color: #333;
-  color: white;
+  background-color: #E3F2FD; /* Very light blue for input fields */
+  color: #0D47A1; /* Dark blue text color */
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   width: 100%;
   margin-top: 10px;
-  border: none;
+  border: 1px solid #BBDEFB; /* Light blue border */
   outline: none;
   box-shadow: none;
 }
@@ -276,182 +329,397 @@ textarea:focus {
 }
 
 button {
-  background-color: #3182ce;
-  color: white;
+  background-color: #0D47A1; /* Dark blue button color */
+  color: #E3F2FD; /* Light blue text color */
   font-size: 18px;
   font-weight: bold;
   padding: 12px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 5px 10px rgba(50, 150, 250, 0.5);
+  box-shadow: 0 5px 10px rgba(13, 71, 161, 0.2);
 }
 
 button:hover {
-  background-color: #006bb3;
+  background-color: #1976D2; /* Slightly lighter blue on hover */
   transform: translateY(-3px);
 }
 
-img {
-  object-fit: cover;
-  display: block;
-  border: none;
+a {
+  color: #FFEB3B; /* Yellow link color */
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Responsive Styling */
-@media screen and (max-width: 768px) {
-  .profile-card {
-    padding: 20px;
-  }
-
-  .progress-bar {
-    height: 12px;
-  }
-
-  .stat-card {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .dashboard-stats {
-    flex-direction: column;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
-/* Home Page Styling */
-.home-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Settings Container Styles */
+/* Settings Page */
 .settings-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align items to the top */
-  min-height: 100vh;
-  padding: 0;
-  background-color: #e0f2f1; /* Light background for contrast */
+  padding-top: 80px; /* Adjust padding to avoid overlap with Navbar */
+  background-color: #F5F5F5; /* Light background color */
+  min-height: 100vh; /* Full height */
 }
 
-/* Settings Content Styling */
 .settings-content {
-  width: 80%; /* Increased width for better layout */
-  max-width: 1200px; /* Max-width for larger screens */
-  background-color: #ffffff; /* White background for content */
-  border-radius: 1rem; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 2rem; /* Inner padding */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  margin: 1rem auto; /* Center the content with margin */
+  width: 80%;
+  max-width: 1200px;
+  background-color: #FFFFFF; /* White background for the content area */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  padding: 2rem; /* Padding inside content area */
+  margin: 0 auto; /* Center the content */
   display: flex;
-  flex-direction: column; /* Arrange child elements vertically */
+  flex-direction: column; /* Stack child elements vertically */
 }
 
-/* Settings Title */
 .settings-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #333333;
 }
 
-/* Section Styling */
 .settings-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem; /* Space between sections */
 }
 
-/* Section Header */
 .settings-section h2 {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #4f46e5; /* Accent color */
-  border-bottom: 2px solid #4f46e5; /* Underline effect */
+  color: #2196F3; /* Accent color */
+  border-bottom: 2px solid #2196F3; /* Underline effect */
   padding-bottom: 0.5rem;
 }
 
-/* Input and Select Styles */
 .settings-input, .settings-select {
   margin-bottom: 1.5rem;
 }
 
-/* Input and Select Labels */
 .settings-input label, .settings-select label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: #555; /* Slightly darker text color */
+  color: #555555;
 }
 
-/* Input and Select Fields */
 .settings-input input, .settings-select select {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #4f46e5; /* Blue border */
+  border: 2px solid #2196F3;
   border-radius: 0.5rem;
   transition: border-color 0.3s ease;
 }
 
-/* Focus States */
 .settings-input input:focus, .settings-select select:focus {
-  border-color: #66ccff; /* Lighter blue on focus */
+  border-color: #66ccff;
   outline: none;
 }
 
-/* Save Button Styling */
 .settings-button {
   width: 100%;
   padding: 1rem;
-  background-color: #4f46e5; /* Button color matching the theme */
+  background-color: #2196F3;
   border: none;
   border-radius: 0.75rem;
   color: #ffffff;
   font-size: 1.25rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for button */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Hover Effect */
 .settings-button:hover {
-  background-color: #66ccff; /* Lighter blue on hover */
-  transform: scale(1.05); /* Slight scale effect on hover */
+  background-color: #66ccff;
+  transform: scale(1.05);
 }
 
-/* Links Styling */
+.settings-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .settings-links a {
   display: block;
-  color: #4f46e5;
+  color: #2196F3;
   text-decoration: none;
   margin-bottom: 0.75rem;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-/* Link Hover Effect */
 .settings-links a:hover {
   color: #66ccff;
   text-decoration: underline;
 }
 
-.footer {
-  background-color: #2196F3; /* Blue background color */
-  border-radius: 10px; /* Slightly rounded corners */
-  border: 1px solid #1976D2; /* Darker blue border color */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 2px;
+/* Workouts Page Styling */
+.workouts-container {
+  padding: 80px 20px; /* Add padding to account for Navbar */
+  background-color: #E3F2FD; /* Light blue background for the Workouts page */
+  min-height: 100vh; /* Ensure full height */
+}
+
+.workouts-content {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content */
+  padding: 20px;
+  background-color: #FFFFFF; /* White background for the content area */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.workouts-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
   text-align: center;
+  color: #0D47A1; /* Dark blue text color */
 }
 
-.footer img {
+.workouts-section {
+  margin-bottom: 2rem; /* Space between sections */
+}
+
+.workouts-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2196F3; /* Accent color */
+  border-bottom: 2px solid #2196F3; /* Underline effect */
+  padding-bottom: 0.5rem;
+}
+
+.workouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.workouts-item {
+  background-color: #BBDEFB; /* Light blue for list items */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.workouts-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #0D47A1; /* Dark blue text color */
+}
+
+/* Workouts Container */
+.workouts-container {
+  padding: 40px;
+  background-color: #E3F2FD; /* Light blue background */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  padding-top: 80px; /* Adjust padding-top to account for the Navbar */
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0D47A1; /* Dark blue text color */
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  color: #2196F3; /* Accent color */
+  border-bottom: 2px solid #2196F3;
+  padding-bottom: 10px;
 }
 
-.footer p {
+/* Challenges Section */
+.challenges-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.challenge-item {
+  background-color: #BBDEFB; /* Light blue background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.challenge-status.completed {
+  color: #4CAF50; /* Green for completed */
+}
+
+.challenge-status.ongoing {
+  color: #FF5722; /* Orange for ongoing */
+}
+
+/* Achievements Section */
+.achievements-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.achievement-item {
+  background-color: #BBDEFB; /* Light blue background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.achievement-title {
+  font-weight: bold;
+}
+
+.achievement-date {
+  color: #757575; /* Gray for date */
+}
+
+/* Feedback Section */
+.feedback-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedback-item {
+  background-color: #BBDEFB; /* Light blue background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-workout {
+  font-weight: bold;
+}
+
+.feedback-text {
+  font-style: italic;
+}
+
+/* Rest Tips Section */
+.rest-tips-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.rest-tip {
+  background-color: #E3F2FD; /* Very light blue background */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjusting for Navbar height */
+  margin-top: 80px; /* Adding margin-top to push content down */
+  background: linear-gradient(to right, #E3F2FD, #BBDEFB); /* Gradient background */
+}
+
+.auth-box {
+  background-color: #FFFFFF; /* White background for the auth box */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  padding: 2rem; /* Padding inside the box */
+  width: 100%;
+  max-width: 400px; /* Limiting the width of the box */
+  text-align: center; /* Centering text */
+}
+
+.auth-title {
+  font-size: 2.5rem; /* Larger font size for title */
+  margin-bottom: 1.5rem; /* Spacing below the title */
+  color: #0D47A1; /* Dark blue color for title */
+  font-weight: bold; /* Bold title */
+}
+
+.input-group {
+  margin-bottom: 1.5rem; /* Spacing between input fields */
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #BBDEFB; /* Light blue border */
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-size: 1rem; /* Adjusting font size for inputs */
+  color: #0D47A1; /* Dark blue text color */
+  background-color: #E3F2FD; /* Very light blue background for inputs */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.auth-input:focus {
+  border-color: #0D47A1; /* Dark blue border on focus */
+  outline: none; /* Removing default outline */
+}
+
+.password-container {
+  position: relative; /* Positioning for the show/hide button */
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #0D47A1;
+  cursor: pointer;
+  font-size: 0.9rem; /* Smaller font size for button */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.show-password:hover {
+  color: #1976D2; /* Change color on hover */
+}
+
+.auth-button {
+  background-color: #0D47A1; /* Dark blue button color */
   color: #FFFFFF; /* White text color */
-  font-family: 'Times New Roman', serif;
-  font-size: 10px;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.125rem; /* Adjusting font size for button */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for button */
+}
+
+.auth-button:hover {
+  background-color: #1976D2; /* Slightly lighter blue on hover */
+  transform: translateY(-3px);
+}
+
+.auth-link {
+  margin-top: 1rem;
+  font-size: 0.875rem; /* Smaller font size for link */
+}
+
+.auth-link a {
+  color: #0D47A1; /* Dark blue color for links */
+  text-decoration: none; /* Removing underline from links */
+  font-weight: bold; /* Bold link text */
+}
+
+.auth-link a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
