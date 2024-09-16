@@ -723,3 +723,41 @@ a:hover {
 .auth-link a:hover {
   text-decoration: underline; /* Underline on hover */
 }
+
+/* App.css */
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
