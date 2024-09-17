@@ -1,55 +1,81 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const ContactSupport = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Your message has been sent. We will get back to you shortly.');
+
+        emailjs.send(
+            'your_service_id',
+            'your_template_id',
+            formData,
+            'your_public_key'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Your message has been sent successfully!');
+            })
+            .catch((error) => {
+                console.log('FAILED...', error);
+                alert('Failed to send the message. Please try again later.');
+            });
+
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
     };
 
     return (
-        <div className="content-container">
-            <div className="content">
-                <h1 className="content-title">Contact Support</h1>
-                <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                            placeholder="Enter your name"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            placeholder="Enter your email"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="message">Message</label>
-                        <textarea
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            required
-                            placeholder="Enter your message"
-                        ></textarea>
-                    </div>
-                    <button type="submit" className="submit-button">Send Message</button>
-                </form>
-            </div>
+        <div className="contact-container">
+            <h1>Contact Support</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="input-group">
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="input-group">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="input-group">
+                    <label>Message:</label>
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
         </div>
     );
 };
