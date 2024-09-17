@@ -41,7 +41,7 @@ const Navbar = ({ toggleDashboard }) => {
                             borderRadius: '20px',
                             '&:hover': {
                                 backgroundColor: '#FFEB3B', // Yellow background on hover
-                                color: '#1E88E5' // Blue text color on hover
+                                color: '#FF2625' // Blue text color on hover
                             }
                         }}
                     >
