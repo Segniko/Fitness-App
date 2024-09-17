@@ -1,9 +1,13 @@
-import { Stack, Button } from '@mui/material';
 import React from 'react';
+import { Stack, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/Logo.png';
+import { useClerk, useUser } from '@clerk/clerk-react';
 
 const Navbar = ({ toggleDashboard }) => {
+    const { signOut } = useClerk();
+    const { isSignedIn } = useUser();
+
     return (
         <Stack
             direction="row"
@@ -30,12 +34,13 @@ const Navbar = ({ toggleDashboard }) => {
                 />
             </Link>
             <Stack direction="row" spacing={3} alignItems="center">
-                <Link to="/login" style={{ textDecoration: 'none' }}>
+                {isSignedIn ? (
                     <Button
                         variant="outlined"
+                        onClick={() => signOut()}
                         sx={{
-                            borderColor: '#FFEB3B', // Yellow border color for Login button
-                            color: '#FFEB3B', // Yellow text color for Login button
+                            borderColor: '#FFEB3B', // Yellow border color for Logout button
+                            color: '#FFEB3B', // Yellow text color for Logout button
                             fontSize: '16px',
                             fontWeight: 'bold',
                             borderRadius: '20px',
@@ -45,29 +50,50 @@ const Navbar = ({ toggleDashboard }) => {
                             }
                         }}
                     >
-                        Login
+                        Logout
                     </Button>
-                </Link>
-                <Link to="/signup" style={{ textDecoration: 'none' }}>
-                    <Button
-                        variant="contained"
-                        sx={{
-                            backgroundColor: '#FFEB3B', // Yellow background color for Sign Up button
-                            color: '#1E88E5', // Blue text color for Sign Up button
-                            fontSize: '16px',
-                            fontWeight: 'bold',
-                            borderRadius: '20px',
-                            '&:hover': {
-                                backgroundColor: '#FBC02D' // Slightly darker yellow on hover
-                            }
-                        }}
-                    >
-                        Sign Up
-                    </Button>
-                </Link>
+                ) : (
+                    <>
+                        <Link to="/login" style={{ textDecoration: 'none' }}>
+                            <Button
+                                variant="outlined"
+                                sx={{
+                                    borderColor: '#FFEB3B', // Yellow border color for Login button
+                                    color: '#FFEB3B', // Yellow text color for Login button
+                                    fontSize: '16px',
+                                    fontWeight: 'bold',
+                                    borderRadius: '20px',
+                                    '&:hover': {
+                                        backgroundColor: '#FFEB3B', // Yellow background on hover
+                                        color: '#FF2625' // Blue text color on hover
+                                    }
+                                }}
+                            >
+                                Login
+                            </Button>
+                        </Link>
+                        <Link to="/signup" style={{ textDecoration: 'none' }}>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    backgroundColor: '#FFEB3B', // Yellow background color for Sign Up button
+                                    color: '#1E88E5', // Blue text color for Sign Up button
+                                    fontSize: '16px',
+                                    fontWeight: 'bold',
+                                    borderRadius: '20px',
+                                    '&:hover': {
+                                        backgroundColor: '#FBC02D' // Slightly darker yellow on hover
+                                    }
+                                }}
+                            >
+                                Sign Up
+                            </Button>
+                        </Link>
+                    </>
+                )}
             </Stack>
         </Stack>
     );
-}
+};
 
 export default Navbar;
