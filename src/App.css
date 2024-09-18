@@ -762,6 +762,13 @@ a:hover {
   text-decoration: underline;
 }
 
+/*Contact Support */
+.contact-container {
+  margin-top: 40px;
+  padding: 100px;
+}
+
+
 /* PrivacyPolicy.css */
 
 .privacy-page {

@@ -23,7 +23,7 @@ const Navbar = ({ toggleDashboard }) => {
                 zIndex: 1000,
                 padding: '0 20px',
                 height: '70px',
-                backgroundColor: '#1E88E5' // Slightly lighter blue to fit with the background
+                backgroundColor: '#90CAF9' // Slightly lighter blue to fit with the background
             }}
         >
             <Link onClick={toggleDashboard} style={{ display: 'flex', alignItems: 'center' }}>
@@ -39,13 +39,13 @@ const Navbar = ({ toggleDashboard }) => {
                         variant="outlined"
                         onClick={() => signOut()}
                         sx={{
-                            borderColor: '#FFEB3B', // Yellow border color for Logout button
-                            color: '#FFEB3B', // Yellow text color for Logout button
+                            borderColor: '#FFF176', // Yellow border color for Logout button
+                            color: '#FFF176', // Yellow text color for Logout button
                             fontSize: '16px',
                             fontWeight: 'bold',
                             borderRadius: '20px',
                             '&:hover': {
-                                backgroundColor: '#FFEB3B', // Yellow background on hover
+                                backgroundColor: '#FFF176', // Yellow background on hover
                                 color: '#FF2625' // Blue text color on hover
                             }
                         }}
@@ -58,13 +58,13 @@ const Navbar = ({ toggleDashboard }) => {
                             <Button
                                 variant="outlined"
                                 sx={{
-                                    borderColor: '#FFEB3B', // Yellow border color for Login button
-                                    color: '#FFEB3B', // Yellow text color for Login button
+                                    borderColor: '#FFF176', // Yellow border color for Login button
+                                    color: '#FFF176', // Yellow text color for Login button
                                     fontSize: '16px',
                                     fontWeight: 'bold',
                                     borderRadius: '20px',
                                     '&:hover': {
-                                        backgroundColor: '#FFEB3B', // Yellow background on hover
+                                        backgroundColor: '#FFF176', // Yellow background on hover
                                         color: '#FF2625' // Blue text color on hover
                                     }
                                 }}
@@ -76,13 +76,13 @@ const Navbar = ({ toggleDashboard }) => {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    backgroundColor: '#FFEB3B', // Yellow background color for Sign Up button
+                                    backgroundColor: '#FFF176', // Yellow background color for Sign Up button
                                     color: '#1E88E5', // Blue text color for Sign Up button
                                     fontSize: '16px',
                                     fontWeight: 'bold',
                                     borderRadius: '20px',
                                     '&:hover': {
-                                        backgroundColor: '#FBC02D' // Slightly darker yellow on hover
+                                        backgroundColor: '#FFF176' // Slightly darker yellow on hover
                                     }
                                 }}
                             >

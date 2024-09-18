@@ -20,10 +20,10 @@ const ContactSupport = () => {
         e.preventDefault();
 
         emailjs.send(
-            'your_service_id',
-            'your_template_id',
+            'service_pwee6yi',
+            'template_mrr4fjq',
             formData,
-            'your_public_key'
+            'egMKwf6gXu9DiY7af'
         )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -42,7 +42,7 @@ const ContactSupport = () => {
     };
 
     return (
-        <div className="contact-container">
+        <div className="contact-container" style={{ marginTop: '50px' }}> {/* Added marginTop */}
             <h1>Contact Support</h1>
             <form onSubmit={handleSubmit}>
                 <div className="input-group">
