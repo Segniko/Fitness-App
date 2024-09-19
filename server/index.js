@@ -15,6 +15,24 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Add a root route to handle the base URL
+app.get('/', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Fitness App</title>
+        </head>
+        <body>
+            <h1>Welcome to the Fitness App API!</h1>
+            <p>Use the available routes to interact with the API.</p>
+        </body>
+        </html>
+    `);
+});
+
 // Route to serve the registration form
 app.get('/register', (req, res) => {
     res.send(`
