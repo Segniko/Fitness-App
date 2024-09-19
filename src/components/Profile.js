@@ -19,8 +19,8 @@ const Profile = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you can implement the form submission logic.
-        alert('Profile updated successfully!');
+        // You can simulate a submission for the demo
+        alert('Profile updated successfully!'); // Placeholder for actual submission logic
     };
 
     return (
