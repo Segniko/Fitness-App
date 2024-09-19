@@ -1,0 +1,13 @@
+# _config.yml
+
+exclude:
+  - node_modules
+  - server/node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - server/
