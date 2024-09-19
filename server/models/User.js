@@ -1,16 +1,24 @@
-// server/models/User.js
-const mongoose = require('mongoose');
+// models/User.js
 
-const userSchema = new mongoose.Schema({
-    username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    profilePicture: { type: String }, // URL or path to the profile picture
-    age: { type: Number },
-    height: { type: Number }, // Height in cm
-    weight: { type: Number }, // Weight in kg
-    goals: [String], // e.g., weight loss, muscle gain
-    createdAt: { type: Date, default: Date.now }
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+    username: {
+        type: String,
+        required: true, // This ensures that username is mandatory
+        unique: true,    // Ensure usernames are unique
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User;
