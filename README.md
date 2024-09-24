@@ -1,146 +1,70 @@
-# **Fitness Web App**
+# Getting Started with Create React App
 
-Welcome to the **Fitness Web App**! This is a comprehensive platform designed to help you track workouts, manage nutrition, and achieve your fitness goals with ease. Whether you're a casual exerciser or a fitness enthusiast, our app offers a range of features to keep you motivated and on track.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## **Table of Contents**
+## Available Scripts
 
-- [Overview](#overview)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Folder Structure](#folder-structure)
-- [Technologies Used](#technologies-used)
-- [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+In the project directory, you can run:
 
-## **Overview**
+### `npm start`
 
-The Fitness Web App provides a user-friendly interface to:
-- Track workout sessions and progress
-- Monitor nutrition intake, including calories and macronutrients
-- Access exercise videos and recommendations
-- Set and achieve personal fitness goals
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## **Features**
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- **User Profiles:** Update and manage personal details, including workout history and nutrition data.
-- **Workout Tracking:** Record completed workouts, track performance, and set goals.
-- **Nutrition Management:** Log daily food intake and monitor nutritional values.
-- **Exercise Videos:** View and follow exercise videos based on body part or equipment.
-- **Progress Reports:** Generate and view detailed reports on your fitness journey.
-- **Feedback & Ratings:** Provide feedback and rate your experiences.
+### `npm test`
 
-## **Getting Started**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-To get started with the Fitness Web App, follow these steps:
+### `npm run build`
 
-### **1. Clone the Repository**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```bash
-git clone https://github.com/your-username/fitness-web-app.git
-cd fitness-web-app
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### **2. Install Dependencies**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-For the frontend:
+### `npm run eject`
 
-```bash
-cd frontend
-npm install
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-For the backend:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```bash
-cd server
-npm install
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### **3. Environment Variables**
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Create a `.env` file in the `server` directory and add the following environment variables:
+## Learn More
 
-```env
-MONGO_URI=your-mongodb-connection-string
-JWT_SECRET=your-jwt-secret-key
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### **4. Run the Application**
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Start the backend server:
+### Code Splitting
 
-```bash
-cd server
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Start the frontend application:
+### Analyzing the Bundle Size
 
-```bash
-cd frontend
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## **Folder Structure**
+### Making a Progressive Web App
 
-Here is an overview of the project structure:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```
-fitness-web-app/
-├── frontend/               # Frontend application files
-│   ├── src/                # Source code for the frontend
-│   ├── public/             # Public assets and HTML files
-│   ├── package.json        # Frontend dependencies and scripts
-│   └── README.md           # Frontend specific documentation
-└── server/                 # Backend application files
-    ├── config/             # Configuration files (e.g., database)
-    ├── controllers/        # API controllers
-    ├── models/             # Database models
-    ├── routes/             # API routes
-    ├── package.json        # Backend dependencies and scripts
-    └── server.js           # Main entry point for the backend server
-```
+### Advanced Configuration
 
-## **Technologies Used**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-- **Frontend:** React, CSS, HTML
-- **Backend:** Node.js, MongoDB
-- **Authentication:** Clerk for user authentication and authorization
+### Deployment
 
-## **API Endpoints**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-- **GET** `/api/exercises`: Fetch all exercises
-- **POST** `/api/workouts`: Create a new workout session
-- **GET** `/api/nutrition`: Retrieve nutrition data
-- **POST** `/api/feedback`: Submit feedback
+### `npm run build` fails to minify
 
-## **Authentication**
-
-The app uses Clerk for user authentication. To manage user sign-ins and sign-outs, the app integrates Clerk's prebuilt components.
-
-## **Deployment**
-
-To deploy the app:
-
-1. **Deploy the Backend:**
-   - Ensure environment variables are set correctly in your deployment environment.
-   - Deploy the backend code to your preferred hosting service.
-
-2. **Deploy the Frontend:**
-   - Build the frontend application using `npm run build`.
-   - Deploy the build files to your preferred hosting service.
-
-## **Contributing**
-
-We welcome contributions to the Fitness Web App! To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request with a description of your changes.
-
-## **License**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

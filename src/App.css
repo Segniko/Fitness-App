@@ -1,4 +1,4 @@
-/* General Reset */
+/*General Reset */
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +16,7 @@ body {
 
 /* Hide Scrollbar */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
 
 /* Sidebar Styling */
@@ -93,7 +93,6 @@ body {
   max-width: 900px;
   margin: 100px auto;
   color: #0D47A1; /* Dark blue text color */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
@@ -143,7 +142,7 @@ button[type="submit"]:hover {
   height: 20px;
   border-radius: 12px;
   background-color: #BBDEFB; /* Light blue for progress bar background */
-  margin-bottom: 15px;
+  margin-bottom: 15px;{}
   overflow: hidden;
 }
 
@@ -234,93 +233,107 @@ button[type="submit"]:hover {
 
 /* Profile Page */
 .profile-container {
-  padding-top: 80px; /* Adjust padding to avoid overlap with Navbar */
-  background-color: #F5F5F5; /* Light background color */
-  min-height: 100vh; /* Full height */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, #a2c2e0, #e0f7fa); /* Light blue gradient */
+  padding: 20px;
+  animation: fadeIn 0.5s; /* Fade-in effect */
 }
 
-.profile-card {
-  width: 90%; /* Increase width of the card */
-  max-width: 800px; /* Increase maximum width */
-  background-color: #FFFFFF; /* White background for the card */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  padding: 2.5rem; /* Increase padding inside the card */
-  margin: 0 auto; /* Center the card */
+.profile-title {
+  font-size: 3em; /* Larger title */
+  color: #0277bd; /* Darker blue */
+  margin-bottom: 250px; /* Space below title */
+  text-align: center; /* Center align title */
 }
 
-.profile-card h2 {
-  font-size: 2.5rem; /* Increase font size */
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333333;
+.membership-info,
+.activity-level-info {
+  width: 80%; /* Full width for sections */
+  padding: 30px;
+  margin: 20px 0; /* Margin between sections */
+  border-radius: 15px; /* Rounded corners */
+  text-align: center; /* Center text */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  transition: transform 0.3s ease; /* Transition for hover effect */
 }
 
-.profile-card label {
-  display: block;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  color: #555555;
+.membership-info:hover,
+.activity-level-info:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
 }
 
-.profile-card input[type="text"],
-.profile-card input[type="email"],
-.profile-card textarea,
-.profile-card input[type="file"] {
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #4f46e5;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  box-sizing: border-box;
+.membership-heading,
+.activity-heading {
+  font-size: 2.5em; /* Large headings */
+  color: #0277bd; /* Dark blue color */
+  margin-bottom: 10px; /* Space below headings */
 }
 
-.profile-card textarea {
-  resize: vertical; /* Allows vertical resizing only */
-  height: 200px; /* Increase default height for textarea */
+.membership-badge {
+  padding: 20px 40px; /* Larger padding for emphasis */
+  border-radius: 50px; /* Pill-shaped badge */
+  background: #90caf9; /* Blue for badge */
+  color: #fff; /* White text */
+  font-weight: bold; /* Bold text */
+  font-size: 2em; /* Large font size */
+  display: inline-block; /* Inline for text */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for badge */
+  margin-bottom: 15px; /* Space below badge */
 }
 
-.profile-card button {
-  width: 100%;
-  padding: 1.25rem; /* Increase padding */
-  background-color: #4f46e5;
-  border: none;
-  border-radius: 0.75rem;
-  color: #ffffff;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.premium-features {
+  color: #f57c20; /* Orange for premium features notice */
+  font-style: italic;
+  font-size: 1.2em; /* Larger font size */
 }
 
-.profile-card button:hover {
-  background-color: #66ccff;
-  transform: scale(1.05);
+.activity-levels {
+  display: flex;
+  flex-direction: column; /* Stack badges vertically */
+  align-items: center; /* Center align badges */
+  margin-top: 20px; /* Space above activity levels */
 }
 
-.profile-picture-preview {
-  margin-top: 1rem;
-  text-align: center;
+.activity-level-badge {
+  width: 80%; /* Full width for activity badges */
+  padding: 20px;
+  border-radius: 15px; /* Rounded corners for badges */
+  background: #bbdefb; /* Light blue for activity levels */
+  color: #0277bd; /* Dark blue text */
+  margin: 10px 0; /* Space between badges */
+  text-align: left; /* Align text to the left */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease; /* Transition for hover effect */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="file"],
-textarea {
-  background-color: #E3F2FD; /* Very light blue for input fields */
-  color: #0D47A1; /* Dark blue text color */
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #BBDEFB; /* Light blue border */
-  outline: none;
-  box-shadow: none;
+.activity-level-badge:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.activity-level {
+  font-size: 1.8em; /* Large font size for activity level */
+  margin: 0; /* Remove default margin */
+}
+
+.activity-description {
+  margin-top: 10px; /* Space above description */
+  color: #555; /* Slightly lighter color for description */
+  font-size: 1.1em; /* Slightly larger font size */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 input:focus,
@@ -355,373 +368,164 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Settings Page */
+/* Settings*/
 .settings-container {
-  padding-top: 80px; /* Adjust padding to avoid overlap with Navbar */
-  background-color: #F5F5F5; /* Light background color */
-  min-height: 100vh; /* Full height */
-}
-
-.settings-content {
-  width: 80%;
-  max-width: 1200px;
-  background-color: #FFFFFF; /* White background for the content area */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  padding: 2rem; /* Padding inside content area */
-  margin: 0 auto; /* Center the content */
-  display: flex;
-  flex-direction: column; /* Stack child elements vertically */
-}
-
-.settings-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333333;
-}
-
-.settings-section {
-  margin-bottom: 2rem; /* Space between sections */
-}
-
-.settings-section h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2196F3; /* Accent color */
-  border-bottom: 2px solid #2196F3; /* Underline effect */
-  padding-bottom: 0.5rem;
-}
-
-.settings-input, .settings-select {
-  margin-bottom: 1.5rem;
-}
-
-.settings-input label, .settings-select label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #555555;
-}
-
-.settings-input input, .settings-select select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #2196F3;
-  border-radius: 0.5rem;
-  transition: border-color 0.3s ease;
-}
-
-.settings-input input:focus, .settings-select select:focus {
-  border-color: #66ccff;
-  outline: none;
-}
-
-.settings-button {
-  width: 100%;
-  padding: 1rem;
-  background-color: #2196F3;
-  border: none;
-  border-radius: 0.75rem;
-  color: #ffffff;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.settings-button:hover {
-  background-color: #66ccff;
-  transform: scale(1.05);
-}
-
-.settings-links {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.settings-links a {
-  display: block;
-  color: #2196F3;
-  text-decoration: none;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.settings-links a:hover {
-  color: #66ccff;
-  text-decoration: underline;
-}
-
-/* Workouts Page Styling */
-.workouts-container {
-  padding: 80px 20px; /* Add padding to account for Navbar */
-  background-color: #E3F2FD; /* Light blue background for the Workouts page */
-  min-height: 100vh; /* Ensure full height */
-}
-
-.workouts-content {
-  max-width: 1200px;
-  margin: 0 auto; /* Center the content */
-  padding: 20px;
-  background-color: #FFFFFF; /* White background for the content area */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-}
-
-.workouts-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #0D47A1; /* Dark blue text color */
-}
-
-.workouts-section {
-  margin-bottom: 2rem; /* Space between sections */
-}
-
-.workouts-section h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2196F3; /* Accent color */
-  border-bottom: 2px solid #2196F3; /* Underline effect */
-  padding-bottom: 0.5rem;
-}
-
-.workouts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.workouts-item {
-  background-color: #BBDEFB; /* Light blue for list items */
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-}
-
-.workouts-item p {
-  margin: 0;
-  font-size: 16px;
-  color: #0D47A1; /* Dark blue text color */
-}
-
-/* Workouts Container */
-.workouts-container {
-  padding: 40px;
-  background-color: #E3F2FD; /* Light blue background */
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  padding-top: 80px; /* Adjust padding-top to account for the Navbar */
-}
-
-/* Section Title */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #0D47A1; /* Dark blue text color */
-}
-
-/* Section Heading */
-.section-heading {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #2196F3; /* Accent color */
-  border-bottom: 2px solid #2196F3;
-  padding-bottom: 10px;
-}
-
-/* Challenges Section */
-.challenges-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.challenge-item {
-  background-color: #BBDEFB; /* Light blue background */
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-}
-
-.challenge-status.completed {
-  color: #4CAF50; /* Green for completed */
-}
-
-.challenge-status.ongoing {
-  color: #FF5722; /* Orange for ongoing */
-}
-
-/* Achievements Section */
-.achievements-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.achievement-item {
-  background-color: #BBDEFB; /* Light blue background */
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-}
-
-.achievement-title {
-  font-weight: bold;
-}
-
-.achievement-date {
-  color: #757575; /* Gray for date */
-}
-
-/* Feedback Section */
-.feedback-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.feedback-item {
-  background-color: #BBDEFB; /* Light blue background */
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.feedback-workout {
-  font-weight: bold;
-}
-
-.feedback-text {
-  font-style: italic;
-}
-
-/* Rest Tips Section */
-.rest-tips-list {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.rest-tip {
-  background-color: #E3F2FD; /* Very light blue background */
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 80px); /* Adjusting for Navbar height */
-  margin-top: 80px; /* Adding margin-top to push content down */
-  background: linear-gradient(to right, #E3F2FD, #BBDEFB); /* Gradient background */
+  padding: 10px;
+  background-color: #e1f5fe; /* Light blue background for a refreshing feel */
+  min-height: 100vh; /* Full viewport height */
 }
 
-.auth-box {
-  background-color: #FFFFFF; /* White background for the auth box */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
-  padding: 2rem; /* Padding inside the box */
+.settings-card {
+  background: #ffffff; /* White background for the card */
+  padding: 40px; /* Increased padding for a bigger feel */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 400px; /* Limiting the width of the box */
-  text-align: center; /* Centering text */
+  max-width: 600px; /* Increased max width for content */
+  transition: transform 0.3s; /* Smooth scaling transition */
 }
 
-.auth-title {
-  font-size: 2.5rem; /* Larger font size for title */
-  margin-bottom: 1.5rem; /* Spacing below the title */
-  color: #0D47A1; /* Dark blue color for title */
-  font-weight: bold; /* Bold title */
+.settings-card:hover {
+  transform: scale(1.03); /* Slightly enlarge the card on hover */
 }
 
-.input-group {
-  margin-bottom: 1.5rem; /* Spacing between input fields */
+.settings-title {
+  font-size: 3em; /* Increased font size */
+  color: #2196f3; /* A vibrant light blue for the title */
+  margin-bottom: 30px; /* Space below title */
+  text-align: center; /* Centered title */
 }
 
-.auth-input {
+.settings-section {
+  margin-bottom: 30px; /* Increased margin for sections */
+}
+
+.settings-input, .settings-select {
+  margin-bottom: 20px; /* More space between inputs */
+}
+
+.settings-input label, .settings-select label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px; /* Space below labels */
+  color: #424242; /* Darker shade for labels */
+}
+
+.settings-input-field {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #BBDEFB; /* Light blue border */
-  border-radius: 6px;
-  margin-top: 0.5rem;
-  font-size: 1rem; /* Adjusting font size for inputs */
-  color: #0D47A1; /* Dark blue text color */
-  background-color: #E3F2FD; /* Very light blue background for inputs */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+  padding: 15px; /* Increased padding for inputs */
+  border: 2px solid #90caf9; /* Light blue border */
+  border-radius: 5px;
+  font-size: 1.2em; /* Increased font size for inputs */
+  transition: border-color 0.3s; /* Smooth transition for border color */
 }
 
-.auth-input:focus {
-  border-color: #0D47A1; /* Dark blue border on focus */
-  outline: none; /* Removing default outline */
+.settings-input-field:focus {
+  outline: none;
+  border-color: #2196f3; /* Darker blue on focus */
 }
 
-.password-container {
-  position: relative; /* Positioning for the show/hide button */
+.settings-links {
+  margin-top: 30px; /* Space above links */
+  text-align: center; /* Centered links */
 }
 
-.show-password {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  color: #0D47A1;
-  cursor: pointer;
-  font-size: 0.9rem; /* Smaller font size for button */
-  transition: color 0.3s ease; /* Smooth transition for color */
+.settings-links-title {
+  margin-bottom: 15px; /* Space below links title */
+  color: #424242; /* Darker shade for links title */
 }
 
-.show-password:hover {
-  color: #1976D2; /* Change color on hover */
+.settings-links a {
+  display: block; /* Stack links */
+  color: #2196f3; /* Vibrant light blue for links */
+  margin: 10px 0; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth transition for link color */
+  font-size: 1.2em; /* Increased font size for links */
 }
 
-.auth-button {
-  background-color: #0D47A1; /* Dark blue button color */
-  color: #FFFFFF; /* White text color */
-  padding: 0.75rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.125rem; /* Adjusting font size for button */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for button */
-}
-
-.auth-button:hover {
-  background-color: #1976D2; /* Slightly lighter blue on hover */
-  transform: translateY(-3px);
-}
-
-.auth-link {
-  margin-top: 1rem;
-  font-size: 0.875rem; /* Smaller font size for link */
-}
-
-.auth-link a {
-  color: #0D47A1; /* Dark blue color for links */
-  text-decoration: none; /* Removing underline from links */
-  font-weight: bold; /* Bold link text */
-}
-
-.auth-link a:hover {
+.settings-links a:hover {
+  color: #0d47a1; /* Darker blue on hover */
   text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Workouts Page*/
+.workouts-container {
+  padding: 90px; /* Increased padding for a longer layout */
+  background-color: #e3f2fd; /* Light blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 4000px; /* Increased width for better display */
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.section-heading {
+  font-size: 1.8rem;
+  color: #1976d2; /* Darker blue for section headings */
+  margin-bottom: 15px;
+}
+
+.workout-types-section, .rest-tips-section {
+  margin-bottom: 50px;
+}
+
+.workout-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted minimum size for better layout */
+  gap: 20px; /* Increased gap between cards */
+}
+
+.workout-card {
+  background-color: #ffffff;
+  padding: 20px; /* Increased padding for more space */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.workout-card:hover {
+  transform: scale(1.05);
+}
+
+.workout-type {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.exercise-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.exercise-item {
+  background-color: #bbdefb; /* Light blue for exercise items */
+  margin: 5px 0;
+  padding: 10px; /* Increased padding for better readability */
+  border-radius: 5px;
+}
+
+.rest-tips-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rest-tip {
+  background-color: #e3f2fd; /* Light blue background */
+  margin: 5px 0;
+  padding: 15px; /* Increased padding for comfort(rest and recovery */
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* App.css */
@@ -764,13 +568,75 @@ a:hover {
 
 /*Contact Support */
 .contact-container {
-  margin-top: 40px;
-  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e1f5fe; /* Light blue background */
+  min-height: 100vh; /* Full height for responsiveness */
 }
 
+h1 {
+  color: #2196f3; /* Vibrant title color */
+  margin-bottom: 30px; /* Space below title */
+}
 
-/* PrivacyPolicy.css */
+.contact-form {
+  background: #ffffff; /* White background for the form */
+  padding: 40px; /* Increased padding for a spacious feel */
+  border-radius: 15px; /* Rounded corners for the form */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  width: 100%;
+  max-width: 600px; /* Limit the width for larger screens */
+}
 
+.input-group {
+  margin-bottom: 20px; /* Space between input groups */
+}
+
+label {
+  font-weight: bold; /* Bold labels */
+  display: block;
+  margin-bottom: 5px; /* Space below labels */
+  color: #424242; /* Darker label color */
+}
+
+.input-field, .textarea-field {
+  width: 100%; /* Full width for inputs */
+  padding: 15px; /* Increased padding */
+  border: 2px solid #90caf9; /* Light blue border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Normal font size */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.input-field:focus, .textarea-field:focus {
+  outline: none;
+  border-color: #2196f3; /* Darker blue on focus */
+}
+
+.textarea-field {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 100px; /* Minimum height for the textarea */
+  font-size: 1.2em; /* Increased font size for better readability */
+}
+
+.submit-button {
+  background-color: #2196f3; /* Vibrant blue for the button */
+  color: white; /* White text on button */
+  padding: 15px; /* Increased padding for button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1.2em; /* Larger font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for button */
+}
+
+.submit-button:hover {
+  background-color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Privacy Policy */
 .privacy-page {
   padding: 100px;
   background: linear-gradient(135deg, #2196F3 30%, #4CAF50 100%);
@@ -833,19 +699,6 @@ p {
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease-in-out;
-}
-
-.contact-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background-color: #FFEB3B;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-in-out;
 }
 
 .contact-link:hover {
@@ -927,10 +780,6 @@ p {
   border-bottom: 1px solid #0D47A1;
   padding: 10px;
   transition: all 0.3s ease;
-}
-
-.faq-item.active {
-  background: linear-gradient(135deg, #2196F3 30%);  color: #fff;
 }
 
 .faq-question {
@@ -1029,103 +878,5 @@ p {
 @keyframes fadeInText {
   0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-/* Center the login form */
-.clerk-auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-/* Adjust the size and padding of the auth box */
-.clerk-auth-box {
-  padding: 40px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-  max-width: 500px; /* Increased width */
-  width: 100%;
-}
-
-/* Title styling */
-.auth-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem; /* Make the title larger */
-  color: #333;
-}
-
-/* Remove the default card border for Clerk's SignIn */
-.clerk-auth-card {
-  border: none; /* Override default border */
-  width: 100%;  /* Ensure full width */
-}
-
-/* Styling the primary button */
-.clerk-auth-button {
-  background-color: #4CAF50; /* Custom button color */
-  color: white;
-  border-radius: 8px; /* Make buttons a bit rounder */
-  font-weight: bold;
-  font-size: 1.2rem; /* Increase button size */
-  padding: 12px 20px;
-  transition: background-color 0.3s ease;
-}
-
-/* Button hover effect */
-.clerk-auth-button:hover {
-  background-color: #45a049;
-}
-
-/* Center the signup form */
-.clerk-auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-/* Adjust the size and padding of the auth box */
-.clerk-auth-box {
-  padding: 40px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-  max-width: 500px; /* Increased width */
-  width: 100%;
-}
-
-/* Title styling */
-.auth-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem; /* Larger title size */
-  color: #333;
-}
-
-/* Remove the default card border for Clerk's SignUp */
-.clerk-auth-card {
-  border: none; /* Override default border */
-  width: 100%;  /* Ensure full width */
-}
-
-/* Styling the primary button */
-.clerk-auth-button {
-  background-color: #4CAF50; /* Custom button color */
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.2rem; /* Increase button size */
-  padding: 12px 20px;
-  transition: background-color 0.3s ease;
-}
-
-/* Button hover effect */
-.clerk-auth-button:hover {
-  background-color: #45a049;
 }
 

@@ -42,9 +42,9 @@ const ContactSupport = () => {
     };
 
     return (
-        <div className="contact-container" style={{ marginTop: '50px' }}> {/* Added marginTop */}
+        <div className="contact-container">
             <h1>Contact Support</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="contact-form">
                 <div className="input-group">
                     <label>Name:</label>
                     <input
@@ -53,6 +53,7 @@ const ContactSupport = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        className="input-field"
                     />
                 </div>
                 <div className="input-group">
@@ -63,6 +64,7 @@ const ContactSupport = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        className="input-field"
                     />
                 </div>
                 <div className="input-group">
@@ -72,9 +74,10 @@ const ContactSupport = () => {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        className="textarea-field"
                     ></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" className="submit-button">Send</button>
             </form>
         </div>
     );

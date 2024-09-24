@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 
 const Workouts = () => {
-    // Sample data
-    const [workoutChallenges] = useState([
-        { id: 1, name: '30-Day Push-Up Challenge', status: 'Completed' },
-        { id: 2, name: '5K Run Challenge', status: 'Ongoing' }
-    ]);
-
-    const [achievements] = useState([
-        { id: 1, title: 'First 5K Run', date: '2024-01-15' },
-        { id: 2, title: '100th Workout Completed', date: '2024-03-10' }
-    ]);
-
-    const [feedbacks] = useState([
-        { id: 1, workout: 'Push-Up Challenge', feedback: 'Great challenge! Really pushed my limits.' },
-        { id: 2, workout: '5K Run Challenge', feedback: 'I loved the motivation and tracking.' },
-        { id: 3, workout: '30-Day Push-Up Challenge', feedback: 'The daily progress updates were very motivating!' },
-        { id: 4, workout: '5K Run Challenge', feedback: 'Fantastic experience! The running tips were helpful.' }
+    //Data
+    const [workoutTypes] = useState([
+        { id: 1, type: 'Strength Training', exercises: ['Squats', 'Deadlifts', 'Bench Press'] },
+        { id: 2, type: 'Cardio', exercises: ['Running', 'Cycling', 'Jump Rope'] },
+        { id: 3, type: 'Flexibility', exercises: ['Yoga', 'Pilates', 'Stretching'] },
+        { id: 4, type: 'High-Intensity Interval Training', exercises: ['Burpees', 'Mountain Climbers', 'Jump Squats'] },
+        { id: 5, type: 'Endurance', exercises: ['Long-distance running', 'Swimming', 'Rowing'] },
+        { id: 6, type: 'Balance Training', exercises: ['Single-leg stand', 'Balance board exercises', 'Tai Chi'] },
+        { id: 7, type: 'Mobility Training', exercises: ['Dynamic stretches', 'Foam rolling', 'Joint rotations'] },
+        { id: 8, type: 'Core Training', exercises: ['Planks', 'Russian twists', 'Bicycle crunches'] },
+        { id: 9, type: 'Plyometrics', exercises: ['Box jumps', 'Jump lunges', 'Depth jumps'] },
+        { id: 10, type: 'Circuit Training', exercises: ['Battle ropes', 'Kettlebell swings', 'Medicine ball slams'] },
+        { id: 11, type: 'Circuit Training', exercises: ['Bodyweight squats', 'Push-ups', 'Lateral lunges'] },
+        { id: 12, type: 'Sport-Specific Training', exercises: ['Agility ladder drills', 'Kettlebell swings', 'Medicine ball throws'] }
     ]);
 
     const [restTips] = useState([
@@ -28,47 +26,34 @@ const Workouts = () => {
         'Use foam rollers to ease muscle tension.',
         'Maintain a balanced diet with adequate proteins and carbs.',
         'Avoid overtraining by listening to your body’s signals.',
-        'Ensure proper warm-up and cool-down during workouts.'
+        'Ensure proper warm-up and cool-down during workouts.',
+        'Establish a consistent sleep schedule to regulate your body clock.',
+        'Limit caffeine and electronic device usage before bedtime.',
+        'Practice deep breathing exercises to reduce stress.',
+        'Include light activities, like walking, on rest days to promote recovery.',
+        'Seek massage therapy to help relieve soreness and tension.',
+        'Monitor and adjust your training intensity based on how you feel.',
+        'Prioritize mental well-being with activities you enjoy.'
     ]);
 
     return (
         <div className="workouts-container">
             <h1 className="section-title">Workouts</h1>
 
-            <section className="challenges-section">
-                <h2 className="section-heading">Workout Challenges</h2>
-                <ul className="challenges-list">
-                    {workoutChallenges.map(challenge => (
-                        <li key={challenge.id} className="challenge-item">
-                            <span className="challenge-name">{challenge.name}</span>
-                            <span className={`challenge-status ${challenge.status.toLowerCase()}`}>{challenge.status}</span>
-                        </li>
+            <section className="workout-types-section">
+                <h2 className="section-heading">Types of Workouts</h2>
+                <div className="workout-types-grid">
+                    {workoutTypes.map(workout => (
+                        <div key={workout.id} className="workout-card">
+                            <h3 className="workout-type">{workout.type}</h3>
+                            <ul className="exercise-list">
+                                {workout.exercises.map((exercise, index) => (
+                                    <li key={index} className="exercise-item">{exercise}</li>
+                                ))}
+                            </ul>
+                        </div>
                     ))}
-                </ul>
-            </section>
-
-            <section className="achievements-section">
-                <h2 className="section-heading">Achievements</h2>
-                <ul className="achievements-list">
-                    {achievements.map(achievement => (
-                        <li key={achievement.id} className="achievement-item">
-                            <span className="achievement-title">{achievement.title}</span>
-                            <span className="achievement-date">{achievement.date}</span>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            <section className="feedback-section">
-                <h2 className="section-heading">Feedback and Ratings</h2>
-                <ul className="feedback-list">
-                    {feedbacks.map(feedback => (
-                        <li key={feedback.id} className="feedback-item">
-                            <span className="feedback-workout">{feedback.workout}:</span>
-                            <span className="feedback-text">"{feedback.feedback}"</span>
-                        </li>
-                    ))}
-                </ul>
+                </div>
             </section>
 
             <section className="rest-tips-section">

@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from React Router
+import { useUser } from '@clerk/clerk-react'; // Import useUser to access user data
 
 const Settings = () => {
-    const [email, setEmail] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const themeColor = 'Light Blue'; // Default blue color, user can't change it
-
-    const handleSave = () => {
-        alert("Settings updated!");
-    };
+    const { user } = useUser(); // Get user information from Clerk
+    const themeColor = 'Light Blue'; // Default color for the theme
 
     return (
         <div className="settings-container">
-            <div className="settings-content">
+            <div className="settings-card">
                 <h1 className="settings-title">Settings</h1>
 
                 {/* Account Management Section */}
@@ -20,21 +16,16 @@ const Settings = () => {
                     <h2>Account Management</h2>
                     <div className="settings-input">
                         <label>Email</label>
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter new email"
-                        />
-                    </div>
-                    <div className="settings-input">
-                        <label>New Password</label>
-                        <input
-                            type="password"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            placeholder="Enter new password"
-                        />
+                        {user ? (
+                            <input
+                                type="email"
+                                value={user.primaryEmailAddress}
+                                readOnly
+                                className="settings-input-field"
+                            />
+                        ) : (
+                            <p>Please sign in to see your email.</p>
+                        )}
                     </div>
                 </div>
 
@@ -47,14 +38,10 @@ const Settings = () => {
                             type="text"
                             value={themeColor}
                             readOnly
+                            className="settings-input-field"
                         />
                     </div>
                 </div>
-
-                {/* Save Button */}
-                <button onClick={handleSave} className="settings-button">
-                    Save Settings
-                </button>
 
                 {/* Help and Support Links */}
                 <div className="settings-links">

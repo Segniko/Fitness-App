@@ -1,14 +1,13 @@
-// testApi.js
 const axios = require('axios');
 
 // API URL
-const baseURL = 'http://localhost:5000/api';
+const baseURL = 'http://localhost:3000/api'; // Make sure this matches your server port
 
 // Function to register a new user
 async function registerUser() {
     try {
-        const response = await axios.post(`${baseURL}/auth/register`, {
-            name: 'John Doe',
+        const response = await axios.post(`${baseURL}/register`, {
+            username: 'JohnDoe',
             email: 'john@example.com',
             password: 'password123'
         });
@@ -21,12 +20,12 @@ async function registerUser() {
 // Function to log in and get a JWT token
 async function loginUser() {
     try {
-        const response = await axios.post(`${baseURL}/auth/login`, {
+        const response = await axios.post(`${baseURL}/login`, {
             email: 'john@example.com',
             password: 'password123'
         });
         console.log('Login successful:', response.data);
-        return response.data.token;
+        return response.data.token; // Ensure this matches your login response structure
     } catch (error) {
         console.error('Error logging in:', error.response ? error.response.data : error.message);
     }

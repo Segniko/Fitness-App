@@ -1,74 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Profile = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [bio, setBio] = useState('');
-    const [profilePicture, setProfilePicture] = useState(null);
+    const membershipType = "Free"; // Static membership type
 
-    const handlePictureUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setProfilePicture(reader.result);
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // You can simulate a submission for the demo
-        alert('Profile updated successfully!'); // Placeholder for actual submission logic
+    // Activity level descriptions
+    const activityLevels = {
+        Sedentary: "You do very little or no physical activity. Most of the day is spent sitting.",
+        "Lightly active": "You engage in light exercise or sports 1-3 days a week.",
+        "Moderately active": "You engage in moderate exercise or sports 3-5 days a week.",
+        "Very active": "You engage in vigorous exercise or sports 6-7 days a week."
     };
 
     return (
         <div className="profile-container">
-            <div className="profile-card">
-                <h2>Edit Profile</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Name:
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Email:
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Bio:
-                        <textarea
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
-                            placeholder="Tell us about yourself..."
-                        />
-                    </label>
-                    <label>
-                        Profile Picture:
-                        <input type="file" accept="image/*" onChange={handlePictureUpload} />
-                    </label>
-                    {profilePicture && (
-                        <div className="profile-picture-preview">
-                            <img
-                                src={profilePicture}
-                                alt="Profile Preview"
-                                style={{ width: '150px', height: '150px', borderRadius: '50%' }}
-                            />
+            <h1 className="profile-title">User Profile</h1>
+            <div className="membership-info">
+                <h2 className="membership-heading">Membership Type</h2>
+                <div className="membership-badge">
+                    <span className="membership-type">{membershipType}</span>
+                </div>
+                <p className="premium-features">Premium features will be available soon!</p>
+            </div>
+            <div className="activity-level-info">
+                <h2 className="activity-heading">Activity Levels</h2>
+                <div className="activity-levels">
+                    {Object.entries(activityLevels).map(([level, description]) => (
+                        <div className="activity-level-badge" key={level}>
+                            <h3 className="activity-level">{level}</h3>
+                            <p className="activity-description">{description}</p>
                         </div>
-                    )}
-                    <button type="submit">Save Changes</button>
-                </form>
+                    ))}
+                </div>
             </div>
         </div>
     );
