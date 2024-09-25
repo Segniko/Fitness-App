@@ -31,26 +31,64 @@ The **Fitness Web App** is designed to help users track their workouts and nutri
 ## File Structure
 
 ```
-fitness-app/
-│
-├── server/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   └── exercisecontroller.js
-│   ├── routes/
-│   ├── models/
-│   ├── index.js
-│   └── server.js
-│
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   └── utils/
-├── .env
+File Structure so far:
+├── node_modules
+├── public/
+│   │   └── favicon.ico
+│   │   └── index.html
+│   │   └── manifest.json
+├── src/  
+│   ├── assets/ 
+|    |    └── icons
+|    |    └── images
+│   ├── components/  
+│   │   └── Dashboard.js  
+|    |    └── BodyPart.js  
+|    |    └── Detail.js  
+|    |    └── ExerciseCard.js  
+|    |    └── Exercises.js  
+|    |    └── ExerciseVidoes.js  
+|    |    └── Footer.js  
+|    |    └── HeroBanner.js  
+|    |    └── HorizontalScrollbar.js  
+|    |    └── Loader.js  
+|    |    └── Login.js  
+|    |    └── Navbar.js  
+|    |    └── Nutrition.js  
+|    |    └── Profile.js  
+|    |    └── SearchExercises.js  
+|    |    └── Settings.js  
+|    |    └── Signup.js  
+|    |    └── SimilarExercises.js  
+|    |    └── TermsOfService.js
+|    |    └── PrivacyPolicy.js
+|    |    └── FAQ.js  
+|    |    └── ContactSupport.js  
+|    ├── pages/  
+|    |    └── ExerciseDetail.js  
+|    |    └── Home.js  
+|    ├── utils/  
+|    |    └── fetchData.js  
+│   ├── App.js  
+├── server/  
+├── config/
+│   └── db.js            # MongoDB connection configuration
+├── controllers/
+│   └── nutritionController.js  
+├── models/
+│   └── Nutrition.js       
+├── routes/
+│   └── nutritionRoutes.js  
+├── .env                  # Environment variables for MongoDB URI
+├── server.js             # Main entry point for the server
 ├── package.json
-└── README.md
+│   ├── App.css  
+│   └── index.js  
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
 ```
 
 ## Installation
