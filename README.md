@@ -9,10 +9,9 @@ The **Fitness Web App** is designed to help users track their workouts and nutri
 - **Exercise Videos:** Users can search for workout videos by body part or equipment and receive YouTube recommendations for similar content.
 - **Workout Tracking:** Tracks completed workout sessions and provides insights into user progress.
 - **Nutrition Tracking:** Allows users to log their meals and track calories, protein, carbs, and fats.
-- **Profile Section:** Users can update personal details such as name, email, and bio.
+- **Profile Section:** Users for now will have a look at their activity level based on the provided info but for the future Users will be able to update personal details such as name, email, and bio.
 - **Workout Challenges and Achievements:** Includes challenges and achievements to keep users motivated.
 - **Rest and Recovery Tips:** A dedicated section providing rest and recovery advice.
-- **Feedback and Ratings:** Users can leave feedback and rate workouts, which is displayed in a modern style with star ratings, user photos, and horizontal scrolling containers.
 
 ## Technology Stack
 
