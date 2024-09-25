@@ -1,43 +1,39 @@
 const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const connectDB = require('./config/db'); // Ensure the path matches your file structure
-const nutritionRoutes = require('./routes/nutritionRoutes'); // Ensure the path matches your file structure
-require('dotenv').config(); // Load environment variables
+const connectDB = require('./config/db');
+const nutritionRoutes = require('./routes/nutritionRoutes');
+require('dotenv').config();
 
-// Initialize the Express application
 const app = express();
 
-// Middleware setup
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Routes setup
+// API Routes
 app.use('/api/nutrition', nutritionRoutes);
 
-// Connect to MongoDB
+// Connect to the database
 connectDB();
 
-// Root route
+// Root endpoint
 app.get('/', (req, res) => {
-    res.send(`Welcome to the Fitness Club API!`);
-});
-
-// 404 Error handling for undefined routes
-app.use((req, res, next) => {
-    res.status(404).json({ message: 'Endpoint not found' });
-});
-
-// Global error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ message: `Internal Server Error: ${err.message}` });
+    res.send(`
+        <h1>Welcome to the Fitness Club API!</h1>
+        <p>This is the backend API for the Fitness Web App.</p>
+        <h2>Available API Endpoints:</h2>
+        <ul>
+            <li><strong>GET /api/nutrition</strong> - Fetch all nutrition data</li>
+            <li><strong>POST /api/nutrition</strong> - Add new nutrition data</li>
+            <li><strong>PUT /api/nutrition/:id</strong> - Update existing nutrition data by ID</li>
+            <li><strong>DELETE /api/nutrition/:id</strong> - Delete nutrition data by ID</li>
+        </ul>
+        <p>For further documentation, please contact the development team.</p>
+    `);
 });
 
 // Start the server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
