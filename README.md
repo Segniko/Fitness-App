@@ -144,7 +144,7 @@ To get the project up and running locally, follow these steps:
    npm run dev
    ```
 
-   The frontend will be served on `http://localhost:3000` and the backend API on `http://localhost:5000`.
+   The frontend will be served on `http://localhost:3000` and the backend API on `https://fitness-app-4pxo.onrender.com/`.
 
 ## API Endpoints
 
